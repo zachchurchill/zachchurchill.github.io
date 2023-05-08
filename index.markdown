@@ -1,12 +1,20 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
-layout: home
+# TODO branch off default layout for home, memory bank entries and posts
+layout: default
 ---
 # zachchurchill.github.io
 
 Interactive lists for meads, beers, and wines that I've had forthcoming along with some less interesting facts about me.
+
+## Memory Banks
+
+<ul>
+    {% for memory_bank in site.memory_banks %}
+    <li>
+        <a href="{{ memory_bank.url }}">{{ memory_bank.title }}</a>
+    </li>
+    {% endfor %}
+</ul>
 
 ## Posts
 

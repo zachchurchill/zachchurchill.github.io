@@ -27,8 +27,12 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  zachchurchill
 
+collections_dir: gathered_collections
 collections:
   posts:
+    output: true
+    permalink: /:collection/:name
+  memory_banks:
     output: true
     permalink: /:collection/:name
 
