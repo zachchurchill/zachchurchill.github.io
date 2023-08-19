@@ -1,0 +1,27 @@
+---
+title: "Books"
+---
+
+```{r setup, echo=FALSE, include=FALSE}
+library(here)
+library(readr)
+library(stringr)
+library(kableExtra)
+
+website_path <- here()
+```
+
+```{r books, echo = FALSE}
+prepare_column_names <- function(raw_names) {
+  raw_names %>%
+    str_replace("__", "\\") %>% 
+    str_replace("_", " ") %>% 
+    str_to_title()
+}
+books <- read_csv(file.path(website_path, "_data", "books.csv"), show_col_types = FALSE)
+names(books) <- prepare_column_names(names(books))
+books %>%
+  kbl() %>% 
+  kable_material(c("striped", "hover", "responsive")) %>% 
+  kable_styling(fixed_thead = TRUE)
+```

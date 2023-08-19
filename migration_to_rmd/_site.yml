@@ -1,0 +1,9 @@
+name: "zachchurchill.github.io"
+navbar:
+  title: "Zach Churchill's Website"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Books"
+      icon: fa-book
+      href: books.html
