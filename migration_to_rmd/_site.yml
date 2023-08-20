@@ -7,3 +7,18 @@ navbar:
     - text: "Books"
       icon: fa-book
       href: books.html
+    - text: "Beverages"
+      icon: fa-champagne-glasses
+      menu:
+        - text: "Meads"
+          icon: fa-wine-glass
+          href: meads.html
+        - text: "Wines"
+          icon: fa-wine-bottle
+          href: wines.html
+        - text: "Whiskeys"
+          icon: fa-whiskey-glass
+          href: whiskeys.html
+        - text: "Ciders"
+          icon: fa-apple-whole
+          href: ciders.html
