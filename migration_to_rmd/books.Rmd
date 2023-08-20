@@ -9,17 +9,12 @@ library(stringr)
 library(kableExtra)
 
 website_path <- here()
+
+source(file.path(website_path, "data_prep.R"))
 ```
 
 ```{r books, echo = FALSE}
-prepare_column_names <- function(raw_names) {
-  raw_names %>%
-    str_replace("__", "\\") %>% 
-    str_replace("_", " ") %>% 
-    str_to_title()
-}
-books <- read_csv(file.path(website_path, "_data", "books.csv"), show_col_types = FALSE)
-names(books) <- prepare_column_names(names(books))
+books <- load_and_prepare_data(file.path(website_path, "_data", "books.csv"))
 books %>%
   kbl() %>% 
   kable_material(c("striped", "hover", "responsive")) %>% 
