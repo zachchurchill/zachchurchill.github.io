@@ -1,0 +1,21 @@
+---
+title: "Whiskeys"
+---
+
+```{r setup, echo=FALSE, include=FALSE}
+library(here)
+library(readr)
+library(stringr)
+library(kableExtra)
+
+website_path <- here()
+
+source(file.path(website_path, "data_prep.R"))
+```
+
+```{r books, echo = FALSE}
+whiskeys <- load_and_prepare_data(file.path(website_path, "_data", "whiskeys.csv"))
+whiskeys %>%
+  kbl() %>% 
+  kable_styling(fixed_thead = TRUE)
+```
