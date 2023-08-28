@@ -1,5 +1,5 @@
 name: "zachchurchill.github.io"
-output_dir: "www"
+output_dir: "docs"
 navbar:
   title: "Zach Churchill"
   left:
