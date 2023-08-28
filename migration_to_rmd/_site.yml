@@ -1,6 +1,6 @@
 name: "zachchurchill.github.io"
 navbar:
-  title: "Zach Churchill's Website"
+  title: "Zach Churchill"
   left:
     - text: "Home"
       href: index.html
