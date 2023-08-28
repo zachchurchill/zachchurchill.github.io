@@ -17,6 +17,5 @@ source(file.path(website_path, "data_prep.R"))
 ciders <- load_and_prepare_data(file.path(website_path, "_data", "ciders.csv"))
 ciders %>%
   kbl() %>% 
-  kable_material(c("striped", "hover", "responsive")) %>% 
   kable_styling(fixed_thead = TRUE)
 ```

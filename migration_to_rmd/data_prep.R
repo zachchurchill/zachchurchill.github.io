@@ -3,7 +3,7 @@ library(stringr)
 
 .prepare_column_names <- function(raw_names) {
   raw_names %>%
-    str_replace("__", "\\") %>%
+    str_replace("__", "/") %>%
     str_replace("_", " ") %>%
     str_to_title()
 }
