@@ -5,5 +5,3 @@ _site
 vendor
 .bundle
 Gemfile.lock
-.Rproj.user
-.Rhistory
