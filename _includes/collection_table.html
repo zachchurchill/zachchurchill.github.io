@@ -1,6 +1,8 @@
 {% assign tableId = include.tableId %}
 {% assign rows = include.data %}
 
+<p>There have been <strong>{{ rows | size }}</strong> entries logged in this collection.</p>
+
 <table id="{{ tableId }}">
 {% for row in rows %}
     {% if forloop.first %}
