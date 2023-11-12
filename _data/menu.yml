@@ -1,0 +1,27 @@
+entries:
+  - title: info
+    entries:
+      - title: github repo
+        url: https://github.com/zachchurchill
+      - title: email
+        url: mailto:zach.a.churchill@gmail.com
+      - title: resume
+        url: https://github.com/zachchurchill/zachchurchill/blob/main/professional/default_resume.pdf
+
+  - title: collections
+    entries:
+      - title: books
+        url: books
+      - title: meads
+        url: meads
+      - title: wines
+        url: wines
+      - title: ciders
+        url: ciders
+      - title: whiskeys
+        url: whiskeys
+
+  - title: posts
+    post_list:
+      limit: 5
+      show_more: false
