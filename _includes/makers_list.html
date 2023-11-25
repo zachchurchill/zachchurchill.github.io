@@ -1,0 +1,20 @@
+{% assign drink_type = include.drink_type %}
+{% assign drinks = include.drinks %}
+{% assign maker_type = include.maker_type %}
+{% assign maker = include.maker %}
+{% assign flavor_text_column = include.flavor_text_col %}
+
+{% assign drinks_by_maker = drinks | where: maker_type, maker  %}
+{% assign num_drinks = drinks_by_maker | size %}
+
+## {{ maker }}
+<strong>{{ num_drinks }}</strong>
+{% if num_drinks == 1 %}{{ drink_type }}{% else %}{{ drink_type}}s{% endif %} enjoyed:
+<ul class="{{ drink_type }}s">
+{% for drink in drinks_by_maker %}
+    <li class="{{ drink_type }}">{{ drink | map: drink_type }}</li>
+    <ul class="flavors" style="display: none">
+        <li class="flavor">"{{ drink | map: flavor_text_column }}"</li>
+    </ul>
+{% endfor %}
+</ul>
