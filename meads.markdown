@@ -11,5 +11,12 @@ custom_js: include_flavors
 {% assign meaderys = site.data.meads | map: "meadery" | uniq %}
 
 {% for meadery in meaderys %}
-{%-include mead_list.html meads=site.data.meads meadery=meadery-%}
+    {%-
+        include makers_list.html
+            drink_type="mead"
+            drinks=site.data.meads
+            maker_type="meadery"
+            maker=meadery
+            flavor_text_col="flavors__tasting_notes"
+    -%}
 {% endfor %}
