@@ -18,6 +18,8 @@ entries:
         url: wines
       - title: ciders
         url: ciders
+      - title: ferments
+        url: ferments
 
   - title: posts
     post_list:
