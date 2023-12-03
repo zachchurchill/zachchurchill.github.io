@@ -6,7 +6,7 @@ custom_js: include_flavors
 
 <p>There have been <strong>{{ site.data.ciders | size }}</strong> ciders logged overall.</p>
 
-<button id="include_flavors" type="button">Include Flavors/Tasting Notes</button>
+<button id="include_flavors" type="button">Show Flavors/Tasting Notes</button>
 
 {% assign ciderys = site.data.ciders | map: "cidery" | uniq %}
 

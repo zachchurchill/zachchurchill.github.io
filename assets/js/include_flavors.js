@@ -9,10 +9,10 @@ function show_hide_flavors() {
     }
 
     var btn = document.getElementById("include_flavors");
-    if (btn.textContent === "Include Flavors/Tasting Notes") {
-        btn.textContent = "Remove Flavors/Tasting Notes";
+    if (btn.textContent === "Show Flavors/Tasting Notes") {
+        btn.textContent = "Hide Flavors/Tasting Notes";
     } else {
-        btn.textContent = "Include Flavors/Tasting Notes";
+        btn.textContent = "Show Flavors/Tasting Notes";
     }
 }
 

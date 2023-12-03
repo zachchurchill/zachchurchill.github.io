@@ -6,7 +6,7 @@ custom_js: include_details
 
 <p>There have been <strong>{{ site.data.ferments | size }}</strong> ferments logged overall.</p>
 
-<button id="include_details" type="button">Include Fermentation Log Details</button>
+<button id="include_details" type="button">Show Fermentation Log Details</button>
 
 ## still cookin'
 {% assign in_progress = site.data.ferments | where_exp: "item", "item.bottlingDate == nil" %}

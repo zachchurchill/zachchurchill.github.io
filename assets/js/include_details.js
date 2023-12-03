@@ -9,10 +9,10 @@ function show_fermentation_log_details() {
     }
 
     var btn = document.getElementById("include_details");
-    if (btn.textContent === "Include Fermentation Log Details") {
-        btn.textContent = "Remove Fermentation Log Details";
+    if (btn.textContent === "Show Fermentation Log Details") {
+        btn.textContent = "Hide Fermentation Log Details";
     } else {
-        btn.textContent = "Include Fermentation Log Details";
+        btn.textContent = "Show Fermentation Log Details";
     }
 }
 
