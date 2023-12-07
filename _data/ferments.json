@@ -266,7 +266,12 @@
         "bottlingDate": null,
         "finalSG": null,
         "stabilized": true,
-        "backsweetened": true
+        "backsweetened": true,
+        "oakStartDate": "12/6/2023",
+        "oakEndDate": null,
+        "oakType": "chips",
+        "oakFlavor": "French medium toast",
+        "oakAmount": "11 g"
     },
     {
         "id": "#2023-02",
