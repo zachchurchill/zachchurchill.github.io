@@ -18,6 +18,14 @@ custom_js: include_details
         <ul class="ferment_details" style="display: none">
             <li>Started {{ ferment.primaryStartDate }}{% if ferment.startingSG != nil %} with SG ~ {{ ferment.startingSG }}{% endif %}</li>
             <li>{{ ferment.gallon }} gallon batch using {{ ferment.yeast }}</li>
+            {% if ferment.oakStartDate != nil %}
+            <li>
+                Oaked using {{ ferment.oakAmount }} of {{ ferment.oakFlavor }} {{ ferment.oakType}}
+                {% if ferment.oakEndDate != nil %}from {{ ferment.oakStartDate }} to {{ ferment.oakEndDate }}
+                {% else %}since {{ ferment.oakStartDate }}
+                {% endif %}
+            </li>
+            {% endif %}
         </ul>
     </li>
 {% endfor %}
@@ -35,6 +43,14 @@ custom_js: include_details
             <li>Started {{ ferment.primaryStartDate }}{% if ferment.startingSG != nil %} with SG ~ {{ ferment.startingSG }}{% endif %}</li>
             <li>Bottled {{ ferment.bottlingDate }}{% if ferment.finalSG != nil %} with final SG ~ {{ ferment.finalSG }}{% endif %}</li>
             <li>{{ ferment.gallon }} gallon batch using {{ ferment.yeast }}</li>
+            {% if ferment.oakStartDate != nil %}
+            <li>
+                Oaked using {{ ferment.oakAmount }} of {{ ferment.oakFlavor }} {{ ferment.oakType}}
+                {% if ferment.oakEndDate != nil %}from {{ ferment.oakStartDate }} to {{ ferment.oakEndDate }}
+                {% else %}since {{ ferment.oakStartDate }}
+                {% endif %}
+            </li>
+            {% endif %}
         </ul>
     </li>
 {% endfor %}
