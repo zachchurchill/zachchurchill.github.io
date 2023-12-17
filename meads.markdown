@@ -1,7 +1,6 @@
 ---
 layout: page
 title: meads
-custom_js: include_flavors
 ---
 
 <p>There have been <strong>{{ site.data.meads | size }}</strong> meads logged overall.</p>
@@ -20,3 +19,5 @@ custom_js: include_flavors
             flavor_text_col="flavors__tasting_notes"
     -%}
 {% endfor %}
+
+{%- include show_hide_js.html buttonID="include_flavors" className="flavors" buttonText="Flavors/Tasting Notes" -%}

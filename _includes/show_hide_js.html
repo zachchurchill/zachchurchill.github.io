@@ -1,0 +1,26 @@
+{% assign buttonID = include.buttonID %}
+{% assign itemsClass = include.className %}
+{% assign buttonText = include.buttonText %}
+<script>
+function show_hide_button() {
+    var flavors = document.getElementsByClassName("{{ itemsClass }}");
+    for (var i = 0; i < flavors.length; i++) {
+        if (flavors[i].style.display === "none") {
+            flavors[i].style.display = "block";
+        } else {
+            flavors[i].style.display = "none";
+        }
+    }
+
+    var btn = document.getElementById("{{ buttonID }}");
+    if (btn.textContent === "Show {{ buttonText }}") {
+        btn.textContent = "Hide {{ buttonText }}";
+    } else {
+        btn.textContent = "Show {{ buttonText }}";
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("{{ buttonID }}").addEventListener("click", show_hide_button);
+});
+</script>
