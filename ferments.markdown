@@ -51,6 +51,7 @@ custom_js: include_details
                 {% endif %}
             </li>
             {% endif %}
+            {% if ferment.carbonationMethod != nil %}<li>Carbonated via {{ ferment.carbonationMethod }}</li>{% endif %}
         </ul>
     </li>
 {% endfor %}
