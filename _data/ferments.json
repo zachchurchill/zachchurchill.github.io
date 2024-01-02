@@ -263,12 +263,12 @@
         "primaryEndingSG": 1.002,
         "secondaryStartDate": "1/16/2023",
         "tertiaryStartDate": "11/26/2023",
-        "bottlingDate": null,
-        "finalSG": null,
+        "bottlingDate": "1/1/2024",
+        "finalSG": 1.010,
         "stabilized": true,
         "backsweetened": true,
         "oakStartDate": "12/6/2023",
-        "oakEndDate": null,
+        "oakEndDate": "12/20/2023",
         "oakType": "chips",
         "oakFlavor": "French medium toast",
         "oakAmount": "11 g"
@@ -381,10 +381,11 @@
         "primaryStartDate": "10/29/2023",
         "primaryEndingSG": 1,
         "secondaryStartDate": "11/26/2023",
-        "tertiaryStartDate": null,
+        "tertiaryStartDate": "1/1/2024",
         "bottlingDate": null,
         "finalSG": null,
         "stabilized": false,
-        "backsweetened": false
+        "backsweetened": false,
+        "notes": "I split this into 4 1-gal carboys to reduce headspace. This will give me the option to try 4 different styles from this batch."
     }
 ]
