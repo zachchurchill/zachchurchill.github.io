@@ -57,3 +57,4 @@ title: ferments
 </ul>
 
 {%- include show_hide_js.html buttonID="include_details" className="ferment_details" buttonText="Fermentation Log Details" -%}
+{%-include back_to_top_button.html -%}
