@@ -5,6 +5,8 @@ title: meads
 
 <p>There have been <strong>{{ site.data.meads | size }}</strong> meads logged overall.</p>
 
+[Download CSV]({{ "assets/data/meads.csv" | relative_url }})
+
 <button id="include_flavors" type="button">Show Flavors/Tasting Notes</button>
 
 {% assign meaderys = site.data.meads | map: "meadery" | uniq %}

@@ -5,6 +5,8 @@ title: ferments
 
 <p>There have been <strong>{{ site.data.ferments | size }}</strong> ferments logged overall.</p>
 
+[Download JSON]({{ "assets/data/ferments.json" | relative_url }})
+
 <button id="include_details" type="button">Show Fermentation Log Details</button>
 
 ## still cookin'

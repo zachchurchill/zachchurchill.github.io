@@ -5,6 +5,8 @@ title: ciders
 
 <p>There have been <strong>{{ site.data.ciders | size }}</strong> ciders logged overall.</p>
 
+[Download CSV]({{ "assets/data/ciders.csv" | relative_url }})
+
 <button id="include_flavors" type="button">Show Flavors/Tasting Notes</button>
 
 {% assign ciderys = site.data.ciders | map: "cidery" | uniq %}

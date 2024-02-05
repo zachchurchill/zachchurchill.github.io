@@ -5,6 +5,8 @@ title: wines
 
 <p>There have been <strong>{{ site.data.wines | size }}</strong> wines logged overall.</p>
 
+[Download CSV]({{ "assets/data/wines.csv" | relative_url }})
+
 ## 2023
 {% assign wines_2023 = site.data.wines | where: "year_consumed", "2023" %}
 <strong>{{ wines_2023 | size }}</strong> wines enjoyed:

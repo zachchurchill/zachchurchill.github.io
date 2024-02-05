@@ -5,6 +5,8 @@ title: books
 
 <p>There have been <strong>{{ site.data.books | size }}</strong> books logged overall.</p>
 
+[Download CSV]({{ "assets/data/books.csv" | relative_url }})
+
 {% assign unique_years = site.data.books | map: "year_read" | uniq | reverse %}
 {% for year in unique_years %}
 ## {{ year }}
