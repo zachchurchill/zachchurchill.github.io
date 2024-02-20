@@ -396,13 +396,14 @@
         "yeast": "Lalvin Bourgovin RC-212",
         "startingSG": 1.062,
         "primaryStartDate": "02/03/2024",
-        "primaryEndingSG": null,
-        "secondaryStartDate": null,
+        "primaryEndingSG": 1.006,
+        "secondaryStartDate": "02/19/2024",
         "tertiaryStartDate": null,
         "bottlingDate": null,
         "finalSG": null,
         "stabilized": false,
-        "backsweetened": false
+        "backsweetened": false,
+        "notes": "Racked into secondary onto blueberry juice but forgot to take SG reading."
     },
     {
         "id": "#2024-02",
