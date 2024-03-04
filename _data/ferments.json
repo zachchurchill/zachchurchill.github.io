@@ -319,7 +319,7 @@
         "tertiaryStartDate": null,
         "bottlingDate": null,
         "finalSG": null,
-        "stabilized": false,
+        "stabilized": true,
         "backsweetened": false
     },
     {
@@ -350,8 +350,8 @@
         "primaryEndingSG": 1.008,
         "secondaryStartDate": "10/15/2023",
         "tertiaryStartDate": null,
-        "bottlingDate": null,
-        "finalSG": null,
+        "bottlingDate": "3/3/2024",
+        "finalSG": 1.008,
         "stabilized": false,
         "backsweetened": false
     },
@@ -366,8 +366,8 @@
         "primaryEndingSG": 1.008,
         "secondaryStartDate": "10/15/2023",
         "tertiaryStartDate": null,
-        "bottlingDate": null,
-        "finalSG": null,
+        "bottlingDate": "3/3/2024",
+        "finalSG": 1.008,
         "stabilized": false,
         "backsweetened": false
     },
@@ -413,13 +413,14 @@
         "yeast": "???",
         "startingSG": 1.052,
         "primaryStartDate": "02/03/2024",
-        "primaryEndingSG": null,
+        "primaryEndingSG": 1.010,
         "secondaryStartDate": null,
         "tertiaryStartDate": null,
-        "bottlingDate": null,
-        "finalSG": null,
+        "bottlingDate": "03/03/2024",
+        "finalSG": 1.010,
         "stabilized": false,
         "backsweetened": false,
+        "carbonationMethod": "force carbonated",
         "notes": "This is from BrewDog's Hazy Jane recipe kit; used maple syrup as sugar additive to reach SG."
     }
 ]
