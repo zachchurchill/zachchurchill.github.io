@@ -316,11 +316,11 @@
         "primaryStartDate": "3/4/2023",
         "primaryEndingSG": 1.002,
         "secondaryStartDate": "3/23/2023",
-        "tertiaryStartDate": null,
+        "tertiaryStartDate": "3/17/2024",
         "bottlingDate": null,
         "finalSG": null,
         "stabilized": true,
-        "backsweetened": false
+        "backsweetened": true
     },
     {
         "id": "#2023-05",
@@ -398,10 +398,10 @@
         "primaryStartDate": "02/03/2024",
         "primaryEndingSG": 1.006,
         "secondaryStartDate": "02/19/2024",
-        "tertiaryStartDate": null,
+        "tertiaryStartDate": "03/17/2024",
         "bottlingDate": null,
         "finalSG": null,
-        "stabilized": false,
+        "stabilized": true,
         "backsweetened": false,
         "notes": "Racked into secondary onto blueberry juice but forgot to take SG reading."
     },
