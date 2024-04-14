@@ -14,10 +14,6 @@ entries:
         url: books
       - title: meads
         url: meads
-      - title: wines
-        url: wines
-      - title: ciders
-        url: ciders
       - title: ferments
         url: ferments
 
