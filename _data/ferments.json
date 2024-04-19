@@ -384,7 +384,7 @@
         "tertiaryStartDate": "1/1/2024",
         "bottlingDate": null,
         "finalSG": null,
-        "stabilized": false,
+        "stabilized": true,
         "backsweetened": false,
         "notes": "I split this into 4 1-gal carboys to reduce headspace. This will give me the option to try 4 different styles from this batch."
     },
@@ -402,7 +402,7 @@
         "bottlingDate": null,
         "finalSG": null,
         "stabilized": true,
-        "backsweetened": false,
+        "backsweetened": true,
         "notes": "Racked into secondary onto blueberry juice but forgot to take SG reading."
     },
     {
@@ -422,5 +422,21 @@
         "backsweetened": false,
         "carbonationMethod": "force carbonated",
         "notes": "This is from BrewDog's Hazy Jane recipe kit; used maple syrup as sugar additive to reach SG."
+    },
+    {
+        "id": "#2024-03",
+        "ferment": "Tulip Poplar Traditional",
+        "type": "traditional mead",
+        "gallon": 1,
+        "yeast": "Lalvin ICV-D47",
+        "startingSG": 1.100,
+        "primaryStartDate": "04/07/2024",
+        "primaryEndingSG": null,
+        "secondaryStartDate": null,
+        "tertiaryStartDate": null,
+        "bottlingDate": null,
+        "finalSG": null,
+        "stabilized": false,
+        "backsweetened": false
     }
 ]
