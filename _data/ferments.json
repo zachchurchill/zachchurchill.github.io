@@ -317,8 +317,8 @@
         "primaryEndingSG": 1.002,
         "secondaryStartDate": "3/23/2023",
         "tertiaryStartDate": "3/17/2024",
-        "bottlingDate": null,
-        "finalSG": null,
+        "bottlingDate": "4/27/2024",
+        "finalSG": 1.180,
         "stabilized": true,
         "backsweetened": true
     },
