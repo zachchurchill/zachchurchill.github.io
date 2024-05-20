@@ -318,7 +318,7 @@
         "secondaryStartDate": "3/23/2023",
         "tertiaryStartDate": "3/17/2024",
         "bottlingDate": "4/27/2024",
-        "finalSG": 1.180,
+        "finalSG": 1.018,
         "stabilized": true,
         "backsweetened": true
     },
@@ -399,8 +399,8 @@
         "primaryEndingSG": 1.006,
         "secondaryStartDate": "02/19/2024",
         "tertiaryStartDate": "03/17/2024",
-        "bottlingDate": null,
-        "finalSG": null,
+        "bottlingDate": "05/20/2024",
+        "finalSG": 1.018,
         "stabilized": true,
         "backsweetened": true,
         "notes": "Racked into secondary onto blueberry juice but forgot to take SG reading."
