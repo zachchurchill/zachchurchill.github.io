@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>zach churchill | ferments</title>
+  <!-- SEO tags -->
+  <meta name="author" content="Zach Churchill">
+  <meta name="description" content="simple personal website for Zach Churchill">
+  <meta name="keywords" content="blog, mead, reading, personal">
+  <link rel="canonical" href="https://zachurchill.com">  <!-- What do I set this to for these pages? -->
+  <!-- End SEO tags -->
+  <meta name="robots" content="index, follow">
+  <!-- Open Graph tags - improves social media sharing -->
+  <meta name="og:title" content="Zach Churchill">
+  <meta name="og:description" content="simple personal website for Zach Churchill">
+  <meta name="og:url" content="https://zachurchill.com">
+  <!-- End Open Graph tags -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+  />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="container">
+  <header>
+    <hgroup>
+      <h1>ferments</h1>
+      <p>There have been <span id="numFerments"></span> ferments logged overall.</p>
+    </hgroup>
+  </header>
+  <main>
+    <section id="stillCookin">
+      <h2>still cookin'</h2>
+      <p><span id="numStillCookin"></span> ferments still aging:</p>
+      <ul id="fermentsStillCookin">
+      </ul>
+    </section>
+    <section id="completed">
+      <h2>completed</h2>
+      <p><span id="numCompleted"></span> ferments completed and bottled:</p>
+      <ul id="fermentsCompleted">
+      </ul>
+    </section>
+  </main>
+  <footer>
+  </footer>
+  <script type="text/javascript">
+    fetch("./assets/data/ferments.json")
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        document.getElementById("numFerments").innerHTML = data.length.toLocaleString();
+        displayStillCookin(data);
+        displayCompleted(data);
+      })
+      .catch(function (err) {
+        console.log(err);
+      });
+
+    function displayStillCookin(data) {
+      let stillCookin = data.filter((ferment) => ferment.bottlingDate === null);
+      document.getElementById("numStillCookin").innerHTML = stillCookin.length;
+
+      let stillCookinList = document.getElementById("fermentsStillCookin");
+      stillCookin.forEach((ferment) => {
+        let listItem = document.createElement("li");
+        listItem.innerHTML = `"${ferment.ferment}" (${ferment.id} - ${ferment.type})`;
+        stillCookinList.appendChild(listItem);
+      });
+    }
+
+    function displayCompleted(data) {
+      let completed = data.filter((ferment) => ferment.bottlingDate !== null);
+      document.getElementById("numCompleted").innerHTML = completed.length.toLocaleString();
+
+      let completedList = document.getElementById("fermentsCompleted");
+      completed.forEach((ferment) => {
+        let listItem = document.createElement("li");
+        listItem.innerHTML = `"${ferment.ferment}" (${ferment.id} - ${ferment.type})`;
+        completedList.appendChild(listItem);
+      });
+    }
+  </script>
+</body>
+</html>
