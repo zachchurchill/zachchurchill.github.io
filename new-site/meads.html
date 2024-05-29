@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>zach churchill | meads</title>
+  <!-- SEO tags -->
+  <meta name="author" content="Zach Churchill">
+  <meta name="description" content="simple personal website for Zach Churchill">
+  <meta name="keywords" content="blog, mead, reading, personal">
+  <link rel="canonical" href="https://zachurchill.com">
+  <!-- End SEO tags -->
+  <meta name="robots" content="index, follow">
+  <!-- Open Graph tags - improves social media sharing -->
+  <meta name="og:title" content="Zach Churchill">
+  <meta name="og:description" content="simple personal website for Zach Churchill">
+  <meta name="og:url" content="https://zachurchill.com">
+  <!-- End Open Graph tags -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+  />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="container">
+  <header>
+    <hgroup>
+      <h1>meads</h1>
+      <p>There have been <span id="numMeads"></span> meads logged overall.</p>
+    </hgroup>
+  </header>
+  <main>
+  </main>
+  <footer>
+  </footer>
+  <script>
+    fetch("./assets/data/meads.csv")
+      .then(function (response) {
+        return response.text().then((text) => parseAndJsonify(text));
+      })
+      .then(function (data) {
+        console.log(data);
+        document.getElementById("numMeads").innerHTML = data.length.toLocaleString();
+        displayMeadsByMeadery(data);
+      })
+      .catch(function (err) {
+        console.log(err);
+      });
+
+    function parseAndJsonify(csvText) {
+      let expectedColumns = ["meadery", "mead", "flavors__tasting_notes"];
+      let csvData = csvText.trim().split("\n");
+      let actualColumns = csvData[0].trim().split(",");
+      if (actualColumns.length !== expectedColumns.length && !actualColumns.every((val, i) => val === expectedColumns[i])) {
+        throw new Error(`expected columns ${expectedColumns}; received ${actualColumns}`);
+      }
+      let jsonItems = new Array();
+      for (let i = 1; i < csvData.length; ++i) {
+        let fields = csvData[i].split(",");
+        jsonItems.push({
+          "meadery": fields[0].trim(),
+          "mead": fields[1].trim(),
+          "flavors": fields[2].trim(),
+        });
+      }
+      return jsonItems;
+    }
+
+    function displayMeadsByMeadery(meads) {
+      // TODO
+    }
+  </script>
+</body>
+</html>
