@@ -30,6 +30,8 @@
     </hgroup>
   </header>
   <main>
+    <div id="meadsBreakdown">
+    </div>
   </main>
   <footer>
   </footer>
@@ -67,7 +69,28 @@
     }
 
     function displayMeadsByMeadery(meads) {
-      // TODO
+      let meadsBreakdownDiv = document.getElementById("meadsBreakdown");
+      let meaderys = new Set(meads.map((mead) => mead.meadery));
+      meaderys.forEach((meadery) => {
+        let meadsForMeadery = meads.filter((mead) => mead.meadery === meadery);
+
+        let meaderyDetails = document.createElement("details");
+        let meaderySummary= document.createElement("summary");
+        meaderySummary.innerHTML = meadsForMeadery.length == 1
+          ? `${meadery}&nbsp;&nbsp;&nbsp;<small>1 mead enjoyed</small>`
+          : `${meadery}&nbsp;&nbsp;&nbsp;<small>${meadsForMeadery.length} meads enjoyed</small>`
+        meaderyDetails.appendChild(meaderySummary);
+
+        let meadsList = document.createElement("ul");
+        meadsForMeadery.forEach((mead) => {
+          let meadListItem = document.createElement("li");
+          meadListItem.innerHTML = `${mead.mead}&nbsp;&nbsp;<small>'${mead.flavors.replace(/\"/g, "")}'</small>`;
+          meadsList.appendChild(meadListItem);
+        });
+        meaderyDetails.appendChild(meadsList);
+
+        meadsBreakdownDiv.appendChild(meaderyDetails);
+      });
     }
   </script>
 </body>
