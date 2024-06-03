@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>zach churchill | reading</title>
+  <!-- SEO tags -->
+  <meta name="author" content="Zach Churchill">
+  <meta name="description" content="what Zach Churchill has been reading">
+  <meta name="keywords" content="reading, novels, books, poems, essays, short stories">
+  <link rel="canonical" href="https://zachurchill.com/reading">
+  <!-- End SEO tags -->
+  <meta name="robots" content="index, follow">
+  <!-- Open Graph tags - improves social media sharing -->
+  <meta name="og:title" content="Zach Churchill">
+  <meta name="og:description" content="what Zach Churchill has been reading">
+  <meta name="og:url" content="https://zachurchill.com/reading">
+  <!-- End Open Graph tags -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+  />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="container">
+  <header>
+    <hgroup>
+      <h1>reading</h1>
+      <p>There have been <span id="numBooks"></span> books logged overall.</p>
+    </hgroup>
+  </header>
+  <main>
+    <div id="booksBreakdown">
+    </div>
+  </main>
+  <footer>
+  </footer>
+  <script>
+    fetch("./assets/data/books.csv")
+      .then(function (response) {
+        return response.text().then((text) => parseAndJsonify(text));
+      })
+      .then(function (data) {
+        document.getElementById("numBooks").innerHTML = data.length.toLocaleString();
+        displayBooksByYearRead(data);
+      })
+      .catch(function (err) {
+        console.log(err);
+      });
+
+    // TODO pull out into shared JS file
+    function parseAndJsonify(csvText) {
+      let expectedColumns = ["author", "title", "year_read"];
+      let csvData = csvText.trim().split("\n");
+      let actualColumns = csvData[0].trim().split(",");
+      if (actualColumns.length !== expectedColumns.length && !actualColumns.every((val, i) => val === expectedColumns[i])) {
+        throw new Error(`expected columns ${expectedColumns}; received ${actualColumns}`);
+      }
+      let jsonItems = new Array();
+      for (let i = 1; i < csvData.length; ++i) {
+        let fields = csvData[i].split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);  // regex courtesy of https://stackoverflow.com/a/53774647
+        jsonItems.push({
+          "author": fields[0].trim().replace(/\"/g, ""),
+          "title": fields[1].trim().replace(/\"/g, ""),
+          "year_read": Number(fields[2].trim()),
+        });
+      }
+      return jsonItems;
+    }
+
+    function displayBooksByYearRead(books) {
+      let booksBreakdownDiv = document.getElementById("booksBreakdown");
+      let years = Array.from(new Set(books.map((book) => book.year_read)));
+      years.sort((a, b) => b - a).forEach((year) => {
+        let booksForYear = books.filter((book) => book.year_read === year);
+
+        let yearDetails = document.createElement("details");
+        if (year === Math.max(...years)) {
+          yearDetails.setAttribute("open", true);
+        }
+        let yearSummary= document.createElement("summary");
+        yearSummary.innerHTML = booksForYear.length == 1
+          ? `${year}&nbsp;&nbsp;&nbsp;<small>1 book read</small>`
+          : `${year}&nbsp;&nbsp;&nbsp;<small>${booksForYear.length} books read</small>`
+        yearDetails.appendChild(yearSummary);
+
+        let yearList = document.createElement("ul");
+        booksForYear.forEach((book) => {
+          let bookListItem = document.createElement("li");
+          bookListItem.innerHTML = `${book.title}&nbsp;&nbsp;<small>${book.author}</small>`;
+          yearList.appendChild(bookListItem);
+        });
+        yearDetails.appendChild(yearList);
+
+        booksBreakdownDiv.appendChild(yearDetails);
+      });
+    }
+  </script>
+</body>
+</html>
