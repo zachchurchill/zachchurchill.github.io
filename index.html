@@ -5,41 +5,39 @@
 layout: default
 ---
 
-<div class="md:px-36 md:pt-24">
-  <section>
-    <h1 class="text-2xl lowercase">{{ site.author }}</h1>
-    <p>{{ site.description }}</p>
+<section>
+  <h1 class="text-2xl lowercase">{{ site.author }}</h1>
+  <p>{{ site.description }}</p>
+</section>
+
+<div class="px-12">
+  <section class="pt-4">
+    <h2 class="text-xl">info</h2>
+    <ul class="list-inside list-disc">
+      <li><a href="https://github.com/{{ site.github_username }}" class="text-green-700 hover:text-green-500">github repo</a></li>
+      <li><a href="mailto:{{ site.email }}" class="text-green-700 hover:text-green-500">email</a></li>
+      <li><a href="https://github.com/zachchurchill/zachchurchill/blob/main/professional/default_resume.pdf" class="text-green-700 hover:text-green-500">resume</a></li>
+    </ul>
   </section>
 
-  <div class="px-12">
-    <section class="pt-4">
-      <h2 class="text-xl">info</h2>
-      <ul class="list-inside list-disc">
-        <li><a href="https://github.com/{{ site.github_username }}" class="text-green-700 hover:text-green-500">github repo</a></li>
-        <li><a href="mailto:{{ site.email }}" class="text-green-700 hover:text-green-500">email</a></li>
-        <li><a href="https://github.com/zachchurchill/zachchurchill/blob/main/professional/default_resume.pdf" class="text-green-700 hover:text-green-500">resume</a></li>
-      </ul>
-    </section>
+  <section class="pt-4">
+    <h2 class="text-xl">collections</h2>
+    <ul class="list-inside list-disc">
+      <li><a href="{% link books.markdown %}" class="text-green-700 hover:text-green-500">books</a></li>
+      <li><a href="{% link meads.markdown %}" class="text-green-700 hover:text-green-500">meads</a></li>
+      <li><a href="{% link ferments.markdown %}" class="text-green-700 hover:text-green-500">ferments</a></li>
+    </ul>
+  </section>
 
-    <section class="pt-4">
-      <h2 class="text-xl">collections</h2>
-      <ul class="list-inside list-disc">
-        <li><a href="{% link books.markdown %}" class="text-green-700 hover:text-green-500">books</a></li>
-        <li><a href="{% link meads.markdown %}" class="text-green-700 hover:text-green-500">meads</a></li>
-        <li><a href="{% link ferments.markdown %}" class="text-green-700 hover:text-green-500">ferments</a></li>
-      </ul>
-    </section>
-
-    <section class="pt-4">
-      <h2 class="text-xl">posts</h2>
-      <ul class="list-inside list-disc">
-      {% for post in site.posts %}
-        <li>
-          <span class="font-mono pr-2">{{ post.date | date: "%Y-%m-%d" }}</span>
-          <a href="{{ post.url }}" class="text-green-700 hover:text-green-500">{{ post.title }}</a>
-        </li>
-      {% endfor %}
-      </ul>
-    </section>
-  </div>
+  <section class="pt-4">
+    <h2 class="text-xl">posts</h2>
+    <ul class="list-inside list-disc">
+    {% for post in site.posts %}
+      <li>
+        <span class="font-mono pr-2">{{ post.date | date: "%Y-%m-%d" }}</span>
+        <a href="{{ post.url }}" class="text-green-700 hover:text-green-500">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+    </ul>
+  </section>
 </div>
