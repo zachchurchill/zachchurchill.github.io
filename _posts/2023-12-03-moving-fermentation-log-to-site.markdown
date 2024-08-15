@@ -20,7 +20,7 @@ Although I got a simple representation of the log up in my collections,
 I think there is more to be done.
 That is,
 this collection and some of the others like
-[books]({% link books.markdown %})
+[books]({% link books.html %})
 are ripe for summarization and fancy graphs.
 Not making any real promises,
 but I think it may be interesting to try out incorporating some D3.js graphics in the future.

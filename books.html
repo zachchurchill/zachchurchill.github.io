@@ -1,0 +1,28 @@
+---
+layout: page
+title: books
+---
+
+<section>
+  <p>There have been <strong>{{ site.data.books | size }}</strong> books logged overall.</p>
+  <span class="border-2 border-solid rounded border-zinc-700 hover:border-zinc-500">
+    <a href="{{ "assets/data/books.csv" | relative_url }}" class="text-zinc-700 hover:text-zinc-500 p-2">Download CSV</a>
+  </span>
+</section>
+
+
+{% assign unique_years = site.data.books | map: "year_read" | uniq | reverse %}
+{% for year in unique_years %}
+<section class="pt-4">
+<h2 class="text-lg">{{ year }}</h2>
+{% assign filtered_books = site.data.books | where: "year_read", year %}
+<p><strong>{{ filtered_books | size }}</strong> books read:</p>
+<ul id="books__{{ year }}" class="list-outside list-disc">
+{% for book in filtered_books %}
+  <li class="ms-4 mt-2">"{{ book.title }}" by {{ book.author }}</li>
+{% endfor %}
+</ul>
+{% endfor %}
+</section>
+
+{%-include back_to_top_button.html -%}

@@ -19,7 +19,7 @@ but I'm pleased with *zachurchill.com* as it can be interpreted in two ways:
 ---
 
 As you can see in
-[books]({% link books.markdown %}),
+[books]({% link books.html %}),
 I read 18 books in 2023
 (17 novels and 1 novella, excluding short stories and poems).
 For 2024,
