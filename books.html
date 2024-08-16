@@ -3,9 +3,9 @@ layout: page
 title: books
 ---
 
-<section>
+<section class="lg:columns-2">
   <p>There have been <strong>{{ site.data.books | size }}</strong> books logged overall.</p>
-  <span class="border-2 border-solid rounded border-zinc-700 hover:border-zinc-500">
+  <span class="lg:float-right border-2 border-solid rounded border-zinc-700 hover:border-zinc-500">
     <a href="{{ "assets/data/books.csv" | relative_url }}" class="text-zinc-700 hover:text-zinc-500 p-2">Download CSV</a>
   </span>
 </section>
@@ -25,4 +25,4 @@ title: books
 {% endfor %}
 </section>
 
-{%-include back_to_top_button.html -%}
+{%- include back_to_top_button.html -%}
