@@ -5,56 +5,98 @@ title: ferments
 
 {%- include collection_stats.html collection_name="ferments" data_file="ferments.json" -%}
 
-<button id="include_details" type="button">Show Fermentation Log Details</button>
+{%- assign button_id = "include_details" -%}
+{%- assign details_ul_class = "ferment_details" -%}
+{%- assign show_btn_text = "Show Fermentation Log Details" -%}
+{%- assign hide_btn_text = "Hide Fermentation Log Details" -%}
+<span class="border-2 border-solid rounded border-zinc-700 hover:border-zinc-500 p-1">
+  <button id={{ button_id }} type="button" class="p-1 my-2 text-zine-700 hover:text-zinc-500">{{ show_btn_text }}</button>
+</span>
 
-## still cookin'
-{% assign in_progress = site.data.ferments | where_exp: "item", "item.bottlingDate == nil" %}
-<strong>{{ in_progress | size }}</strong> ferments still aging:
-<ul id="ferments__aging">
-{% for ferment in in_progress %}
-    <li class="ferment">
+{%- assign in_progress = site.data.ferments | where_exp: "item", "item.bottlingDate == nil" -%}
+<section class="my-2">
+  <h2 class="text-xl">still cookin'</h2>
+  <p>
+    <strong>{{ in_progress | size }}</strong> ferments still aging:
+    <ul class="list-outside list-disc">
+    {% for ferment in in_progress %}
+      <li class="ms-4 mt-1">
         "{{ ferment.ferment }}" ({{ ferment.id }} - {{ ferment.type }})
-        <ul class="ferment_details" style="display: none">
-            <li>Started {{ ferment.primaryStartDate }}{% if ferment.startingSG != nil %} with SG ~ {{ ferment.startingSG }}{% endif %}</li>
-            <li>{{ ferment.gallon }} gallon batch using {{ ferment.yeast }}</li>
-            {% if ferment.oakStartDate != nil %}
-            <li>
-                Oaked using {{ ferment.oakAmount }} of {{ ferment.oakFlavor }} {{ ferment.oakType}}
-                {% if ferment.oakEndDate != nil %}from {{ ferment.oakStartDate }} to {{ ferment.oakEndDate }}
-                {% else %}since {{ ferment.oakStartDate }}
-                {% endif %}
-            </li>
+        <ul class="{{ details_ul_class }} list-outside list-[circle] hidden text-sm">
+          <li class="ms-4 mt-1">Started {{ ferment.primaryStartDate }}{% if ferment.startingSG != nil %} with SG ~ {{ ferment.startingSG }}{% endif %}</li>
+          <li class="ms-4 mt-1">{{ ferment.gallon }} gallon batch using {{ ferment.yeast }}</li>
+          {% if ferment.oakStartDate != nil %}
+          <li class="ms-4 mt-1">
+            Oaked using {{ ferment.oakAmount }} of {{ ferment.oakFlavor }} {{ ferment.oakType}}
+            {% if ferment.oakEndDate != nil %}from {{ ferment.oakStartDate }} to {{ ferment.oakEndDate }}
+            {% else %}since {{ ferment.oakStartDate }}
             {% endif %}
+          </li>
+          {% endif %}
         </ul>
-    </li>
-{% endfor %}
-</ul>
+      </li>
+    {% endfor %}
+    </ul>
+  </p>
+</section>
 
-
-## completed
-{% assign completed = site.data.ferments | where_exp: "item", "item.bottlingDate != nil" %}
-<strong>{{ completed | size }}</strong> ferments completed and bottled:
-<ul id="ferments__completed">
-{% for ferment in completed %}
-    <li class="ferment">
+{%- assign completed = site.data.ferments | where_exp: "item", "item.bottlingDate != nil" -%}
+<section class="my-2">
+  <h2 class="text-xl">completed</h2>
+  <p>
+    <strong>{{ completed | size }}</strong> ferments completed and bottled:
+    <ul class="list-outside list-disc">
+      {% for ferment in completed %}
+      <li class="ms-4 my-1">
         "{{ ferment.ferment }}" ({{ ferment.id }} - {{ ferment.type }})
-        <ul class="ferment_details" style="display: none">
-            <li>Started {{ ferment.primaryStartDate }}{% if ferment.startingSG != nil %} with SG ~ {{ ferment.startingSG }}{% endif %}</li>
-            <li>Bottled {{ ferment.bottlingDate }}{% if ferment.finalSG != nil %} with final SG ~ {{ ferment.finalSG }}{% endif %}</li>
-            <li>{{ ferment.gallon }} gallon batch using {{ ferment.yeast }}</li>
-            {% if ferment.oakStartDate != nil %}
-            <li>
-                Oaked using {{ ferment.oakAmount }} of {{ ferment.oakFlavor }} {{ ferment.oakType}}
-                {% if ferment.oakEndDate != nil %}from {{ ferment.oakStartDate }} to {{ ferment.oakEndDate }}
-                {% else %}since {{ ferment.oakStartDate }}
-                {% endif %}
-            </li>
+        <ul class="{{ details_ul_class }} list-outside list-[circle] hidden text-sm">
+          <li class="ms-4 mt-1">Started {{ ferment.primaryStartDate }}{% if ferment.startingSG != nil %} with SG ~ {{ ferment.startingSG }}{% endif %}</li>
+          <li class="ms-4 mt-1">Bottled {{ ferment.bottlingDate }}{% if ferment.finalSG != nil %} with final SG ~ {{ ferment.finalSG }}{% endif %}</li>
+          <li class="ms-4 mt-1">{{ ferment.gallon }} gallon batch using {{ ferment.yeast }}</li>
+          {% if ferment.oakStartDate != nil %}
+          <li class="ms-4 mt-1">
+            Oaked using {{ ferment.oakAmount }} of {{ ferment.oakFlavor }} {{ ferment.oakType}}
+            {% if ferment.oakEndDate != nil %}
+            from {{ ferment.oakStartDate }} to {{ ferment.oakEndDate }}
+            {% else %}
+            since {{ ferment.oakStartDate }}
             {% endif %}
-            {% if ferment.carbonationMethod != nil %}<li>Carbonated via {{ ferment.carbonationMethod }}</li>{% endif %}
+            </li>
+          {% endif %}
+          {% if ferment.carbonationMethod != nil %}
+          <li class="ms-4 mt-1">Carbonated via {{ ferment.carbonationMethod }}</li>
+          {% endif %}
         </ul>
-    </li>
-{% endfor %}
-</ul>
+      </li>
+      {% endfor %}
+    </ul>
+  </p>
+</section>
 
-{%- include show_hide_js.html buttonID="include_details" className="ferment_details" buttonText="Fermentation Log Details" -%}
 {%-include back_to_top_button.html -%}
+
+<script>
+function show_hide_button() {
+    var flavors = document.getElementsByClassName("{{ details_ul_class }}");
+    for (var i = 0; i < flavors.length; i++) {
+        if (flavors[i].classList.contains("hidden")) {
+            flavors[i].classList.remove("hidden");
+            flavors[i].classList.add("block");
+        } else {
+            flavors[i].classList.remove("block");
+            flavors[i].classList.add("hidden");
+        }
+    }
+
+    var btn = document.getElementById("{{ button_id }}");
+    if (btn.textContent === "{{ show_btn_text }}") {
+        btn.textContent = "{{ hide_btn_text }}";
+    } else {
+        btn.textContent = "{{ show_btn_text }}";
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("{{ button_id }}").addEventListener("click", show_hide_button);
+});
+</script>
