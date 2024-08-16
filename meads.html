@@ -5,20 +5,21 @@ title: meads
 
 {%- include collection_stats.html collection_name="meads" data_file="meads.csv" -%}
 
-<button id="include_flavors" type="button">Show Flavors/Tasting Notes</button>
+{%- assign meaderys = site.data.meads | map: "meadery" | uniq -%}
+{%- for meadery in meaderys -%}
+  {% assign drinks_by_maker = site.data.meads | where: "meadery", meadery  %}
+  {% assign num_drinks = drinks_by_maker | size %}
+  <section class="my-2">
+    <h2 class="text-xl">{{ meadery }}</h2>
+    <p>
+      <strong>{{ num_drinks }}</strong> mead{% if num_drinks >1 %}s{% endif %} enjoyed:
+      <ul class="list-outside list-disc">
+      {% for drink in drinks_by_maker %}
+        <li class="ms-4 mt-1">{{ drink | map: "mead" }}</li>
+      {% endfor %}
+      </ul>
+    </p>
+  </section>
+{%- endfor -%}
 
-{% assign meaderys = site.data.meads | map: "meadery" | uniq %}
-
-{% for meadery in meaderys %}
-    {%-
-        include makers_list.html
-            drink_type="mead"
-            drinks=site.data.meads
-            maker_type="meadery"
-            maker=meadery
-            flavor_text_col="flavors__tasting_notes"
-    -%}
-{% endfor %}
-
-{%- include show_hide_js.html buttonID="include_flavors" className="flavors" buttonText="Flavors/Tasting Notes" -%}
-{%-include back_to_top_button.html -%}
+{%- include back_to_top_button.html -%}
