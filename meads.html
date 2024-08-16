@@ -3,9 +3,7 @@ layout: page
 title: meads
 ---
 
-<p>There have been <strong>{{ site.data.meads | size }}</strong> meads logged overall.</p>
-
-[Download CSV]({{ "assets/data/meads.csv" | relative_url }})
+{%- include collection_stats.html collection_name="meads" data_file="meads.csv" -%}
 
 <button id="include_flavors" type="button">Show Flavors/Tasting Notes</button>
 

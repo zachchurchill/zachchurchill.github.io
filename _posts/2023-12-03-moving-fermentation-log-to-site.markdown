@@ -7,7 +7,7 @@ categories: blog
 
 There we go!
 Visibility on all of the
-[ferments]({% link ferments.markdown %})
+[ferments]({% link ferments.html %})
 I've made is now available.
 
 Moving this data to my site has finally removed my reliance on Google products to store my collections.

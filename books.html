@@ -3,13 +3,7 @@ layout: page
 title: books
 ---
 
-<section class="lg:columns-2">
-  <p>There have been <strong>{{ site.data.books | size }}</strong> books logged overall.</p>
-  <span class="lg:float-right border-2 border-solid rounded border-zinc-700 hover:border-zinc-500">
-    <a href="{{ "assets/data/books.csv" | relative_url }}" class="text-zinc-700 hover:text-zinc-500 p-2">Download CSV</a>
-  </span>
-</section>
-
+{%- include collection_stats.html collection_name="books" data_file="books.csv" -%}
 
 {% assign unique_years = site.data.books | map: "year_read" | uniq | reverse %}
 {% for year in unique_years %}

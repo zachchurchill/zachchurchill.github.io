@@ -3,9 +3,7 @@ layout: page
 title: ferments
 ---
 
-<p>There have been <strong>{{ site.data.ferments | size }}</strong> ferments logged overall.</p>
-
-[Download JSON]({{ "assets/data/ferments.json" | relative_url }})
+{%- include collection_stats.html collection_name="ferments" data_file="ferments.json" -%}
 
 <button id="include_details" type="button">Show Fermentation Log Details</button>
 
