@@ -11,5 +11,7 @@ github_username:  zachchurchill
 theme:
 
 plugins:
-  - jekyll-feed
   - jekyll-postcss
+
+postcss:
+  cache: false
