@@ -9,9 +9,11 @@ title: ferments
 {%- assign details_ul_class = "ferment_details" -%}
 {%- assign show_btn_text = "Show Fermentation Log Details" -%}
 {%- assign hide_btn_text = "Hide Fermentation Log Details" -%}
-<span class="border-2 border-solid rounded border-zinc-700 hover:border-zinc-500 p-1">
-  <button id={{ button_id }} type="button" class="p-1 my-2 text-zine-700 hover:text-zinc-500">{{ show_btn_text }}</button>
-</span>
+<section class="lg:flex lg:flex-row-reverse">
+  <div class="border-2 border-solid rounded border-zinc-700 hover:border-zinc-500 lg:mt-0 mt-2">
+    <button id={{ button_id }} type="button" class="px-2 py-1 text-zinc-700 hover:text-zinc-500">{{ show_btn_text }}</button>
+  </div>
+</section>
 
 {%- assign in_progress = site.data.ferments | where_exp: "item", "item.bottlingDate == nil" -%}
 <section class="my-2">

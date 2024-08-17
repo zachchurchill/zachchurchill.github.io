@@ -11,8 +11,8 @@
 {%- endfor -%}
 
 <section class="lg:columns-2">
-  <p>There have been <strong>{{ collection_size }}</strong> {{ collection_name }} logged overall.</p>
-  <span class="lg:float-right border-2 border-solid rounded border-zinc-700 hover:border-zinc-500">
-    <a href="{{ data_url | relative_url }}" class="text-zinc-700 hover:text-zinc-500 p-2">Download CSV</a>
-  </span>
+  <p class="pb-2">There have been <strong>{{ collection_size }}</strong> {{ collection_name }} logged overall.</p>
+  <div class="lg:float-right border-2 border-solid rounded border-zinc-700 hover:border-zinc-500 py-1 lg:mt-0 mt-1 mx-auto">
+    <a href="{{ data_url | relative_url }}" class="text-zinc-700 hover:text-zinc-500 px-2 text-nowrap">Download {{ data_file }}</a>
+  </div>
 </section>
