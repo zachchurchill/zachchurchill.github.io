@@ -8,9 +8,9 @@ categories: blog
 <section class="text-sm">
   <strong>tl;dr</strong>
   <ul>
-    <li><span class="italic">Project</span>&nbsp;&nbsp;&nbsp;<strong>The Churchill Library</strong>, a Ruby on Rails app to catalogue family's books and provide interaction with via LLM</li>
-    <li><span class="italic">Tech Stack</span>&nbsp;&nbsp;&nbsp;Ruby on Rails, Hotwire, TailwindCSS, TBD vector database, and TBD LLM API though interested in AWS Bedrock</li>
-    <li><span class="italic">Goals</span>&nbsp;&nbsp;&nbsp;Functional, publicly available app by September; full RAG integration with LLM chat by year-end</li>
+    <li><em>Project</em>&nbsp;&nbsp;&nbsp;<strong>The Churchill Library</strong>, a Ruby on Rails app to catalogue family's books and provide interaction with via LLM</li>
+    <li><em>Tech Stack</em>&nbsp;&nbsp;&nbsp;Ruby on Rails, Hotwire, TailwindCSS, TBD vector database, and TBD LLM API though interested in AWS Bedrock</li>
+    <li><em>Goals</em>&nbsp;&nbsp;&nbsp;Functional, publicly available app by September; full RAG integration with LLM chat by year-end</li>
   </ul>
 </section>
 
