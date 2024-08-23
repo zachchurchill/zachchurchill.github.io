@@ -1,7 +1,10 @@
+<button id="back-to-top" class="border-2 border-solid rounded border-zinc-700 hover:border-zinc-500 w-full p-2 mt-3 mb-12 text-zinc-700 hover:text-zinc-500">&uarr; <span class="font-mono">back to top</span></button>
 <script>
-function backToTop() {
-    document.body.scrollTop = 0;  // For Safari
-    document.documentElement.scrollTop = 0;  // For Chrome, FireFox, IE & Opera
-}
+const scrollToTopButton = document.getElementById('back-to-top');
+scrollToTopButton.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
 </script>
-<button id="back-to-top" onClick="backToTop()", class="border-2 border-solid rounded border-zinc-700 hover:border-zinc-500 w-full p-2 mt-3 mb-12 text-zinc-700 hover:text-zinc-500">&uarr; <span class="font-mono">back to top</span></button>
