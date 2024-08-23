@@ -12,5 +12,7 @@
 
 <section class="lg:columns-2">
   <p class="pb-2">There have been <strong>{{ collection_size }}</strong> {{ collection_name }} logged overall.</p>
-  <a href="{{ data_url | relative_url }}" class="lg:float-right text-zinc-700 hover:text-zinc-500 px-2 text-nowrap border-2 border-solid rounded border-zinc-700 hover:border-zinc-500 py-1 lg:mt-0 mt-1 mx-auto">Download {{ data_file }}</a>
+  <div class="lg:float-right">
+    <button id={{ button_id }} type="button" onclick="window.open('{{ data_url | relative_url }}')" class="w-full border-2 border-solid rounded border-zinc-700 hover:border-zinc-500 xl:mt-0 lg:mt-1 mt-2 px-2 py-1 text-zinc-700 hover:text-zinc-500">Download {{ data_file }}</button>
+  </div>
 </section>
