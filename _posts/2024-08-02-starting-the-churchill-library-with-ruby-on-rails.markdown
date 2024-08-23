@@ -7,13 +7,15 @@ categories: blog
 
 <section class="text-sm">
   <strong>tl;dr</strong>
-  <ul>
-    <li><em>Project</em>&nbsp;&nbsp;&nbsp;<strong>The Churchill Library</strong>, a Ruby on Rails app to catalogue family's books and provide interaction with via LLM</li>
-    <li><em>Tech Stack</em>&nbsp;&nbsp;&nbsp;Ruby on Rails, Hotwire, TailwindCSS, TBD vector database, and TBD LLM API though interested in AWS Bedrock</li>
-    <li><em>Goals</em>&nbsp;&nbsp;&nbsp;Functional, publicly available app by September; full RAG integration with LLM chat by year-end</li>
-  </ul>
+  <dl>
+    <dt class="mt-2"><em>Project</em></dt>
+    <dd><strong>The Churchill Library</strong>, a Ruby on Rails app to catalogue family's books and provide interaction with via LLM</dd>
+    <dt class="mt-2"><em>Tech Stack</em></dt>
+    <dd>Ruby on Rails, Hotwire, TailwindCSS, TBD vector database, and TBD LLM API though interested in AWS Bedrock</dd>
+    <dt class="mt-2"><em>Goals</em></dt>
+    <dd>Functional, publicly available app by September; full RAG integration with LLM chat by year-end</dd>
+  </dl>
 </section>
-
 ---
 
 I am excited to start a new side project!
