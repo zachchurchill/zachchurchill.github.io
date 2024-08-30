@@ -1,9 +1,7 @@
 title: zach churchill
 author: Zach Churchill
 email: website.trimness083@passmail.net
-description: >- # this means to ignore newlines until "baseurl:"
-  simple website for zach churchill that will be used for showing off all of
-  the silly things he likes to keep track of.
+description: simple website to keep track of the silly things & write some thoughts
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://zachchurchill.github.io"
 github_username:  zachchurchill
