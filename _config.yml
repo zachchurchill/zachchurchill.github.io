@@ -5,6 +5,7 @@ description: simple website to keep track of the silly things & write some thoug
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://zachchurchill.github.io"
 github_username:  zachchurchill
+cname: zachurchill.com
 
 theme:
 
