@@ -14,19 +14,19 @@ layout: default
   <section class="pt-4">
     <h2 class="text-xl">info</h2>
     <ul class="list-inside list-disc">
-      <li><a href="https://github.com/{{ site.github_username }}" class="text-cyan hover:text-selection">github repo</a></li>
-      <li><a href="mailto:{{ site.email }}" class="text-cyan hover:text-selection">email</a></li>
-      <li><a href="https://www.linkedin.com/in/zach-churchill-9a8ab6318" class="text-cyan hover:text-selection">resume</a></li>
+      <li><a href="https://github.com/{{ site.github_username }}" class="text-foam-moon hover:text-foam-dawn">github repo</a></li>
+      <li><a href="mailto:{{ site.email }}" class="text-foam-moon hover:text-foam-dawn">email</a></li>
+      <li><a href="https://www.linkedin.com/in/zach-churchill-9a8ab6318" class="text-foam-moon hover:text-foam-dawn">resume</a></li>
     </ul>
   </section>
 
   <section class="pt-4">
     <h2 class="text-xl">collections</h2>
     <ul class="list-inside list-disc">
-      <li><a href="https://library.{{ site.cname }}" class="text-cyan hover:text-selection">library</a></li>
-      <li><a href="{% link books.html %}" class="text-cyan hover:text-selection">books</a></li>
-      <li><a href="{% link meads.html %}" class="text-cyan hover:text-selection">meads</a></li>
-      <li><a href="{% link ferments.html %}" class="text-cyan hover:text-selection">ferments</a></li>
+      <li><a href="https://library.{{ site.cname }}" class="text-foam-moon hover:text-foam-dawn">library</a></li>
+      <li><a href="{% link books.html %}" class="text-foam-moon hover:text-foam-dawn">books</a></li>
+      <li><a href="{% link meads.html %}" class="text-foam-moon hover:text-foam-dawn">meads</a></li>
+      <li><a href="{% link ferments.html %}" class="text-foam-moon hover:text-foam-dawn">ferments</a></li>
     </ul>
   </section>
 
@@ -36,7 +36,7 @@ layout: default
     {% for post in site.posts %}
       <li>
         <span class="font-mono pr-2">{{ post.date | date: "%Y-%m-%d" }}</span>
-        <a href="{{ post.url }}" class="text-cyan hover:text-selection">{{ post.title }}</a>
+        <a href="{{ post.url }}" class="text-foam-moon hover:text-foam-dawn">{{ post.title }}</a>
       </li>
     {% endfor %}
     </ul>
