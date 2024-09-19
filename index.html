@@ -13,7 +13,7 @@ layout: default
 <div class="pr-12">
   <section class="pt-4">
     <h2 class="text-xl">info</h2>
-    <ul class="list-inside list-disc">
+    <ul class="list-inside list-disc space-y-1 md:space-y-0.5">
       <li><a href="https://github.com/{{ site.github_username }}" class="text-foam-moon hover:text-foam-dawn">github repo</a></li>
       <li><a href="mailto:{{ site.email }}" class="text-foam-moon hover:text-foam-dawn">email</a></li>
       <li><a href="https://www.linkedin.com/in/zach-churchill-9a8ab6318" class="text-foam-moon hover:text-foam-dawn">resume</a></li>
@@ -22,7 +22,7 @@ layout: default
 
   <section class="pt-4">
     <h2 class="text-xl">collections</h2>
-    <ul class="list-inside list-disc">
+    <ul class="list-inside list-disc space-y-1 md:space-y-0.5">
       <li><a href="https://library.{{ site.cname }}" class="text-foam-moon hover:text-foam-dawn">library</a></li>
       <li><a href="{% link books.html %}" class="text-foam-moon hover:text-foam-dawn">books</a></li>
       <li><a href="{% link meads.html %}" class="text-foam-moon hover:text-foam-dawn">meads</a></li>
@@ -32,7 +32,7 @@ layout: default
 
   <section class="pt-4">
     <h2 class="text-xl">posts</h2>
-    <ul class="list-inside list-disc">
+    <ul class="list-inside list-disc space-y-1 md:space-y-0.5">
     {% for post in site.posts %}
       <li>
         <span class="font-mono pr-2">{{ post.date | date: "%Y-%m-%d" }}</span>
