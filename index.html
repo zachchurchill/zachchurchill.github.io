@@ -35,7 +35,7 @@ layout: default
     <ul class="list-inside list-disc space-y-1 md:space-y-0.5">
     {% for post in site.posts %}
       <li>
-        <span class="font-mono pr-2">{{ post.date | date: "%Y-%m-%d" }}</span>
+        <span class="font-mono text-subtle-moon pr-2">{{ post.date | date: "%Y-%m-%d" }}</span>
         <a href="{{ post.url }}" class="text-foam-moon hover:text-foam-dawn">{{ post.title }}</a>
       </li>
     {% endfor %}
