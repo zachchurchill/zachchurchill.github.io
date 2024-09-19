@@ -382,11 +382,11 @@
         "primaryEndingSG": 1,
         "secondaryStartDate": "11/26/2023",
         "tertiaryStartDate": "1/1/2024",
-        "bottlingDate": null,
+        "bottlingDate": "...N/A - just drank bits out of carboy",
         "finalSG": null,
         "stabilized": true,
         "backsweetened": false,
-        "notes": "I split this into 4 1-gal carboys to reduce headspace. This will give me the option to try 4 different styles from this batch."
+        "notes": "I split this into 4 1-gal carboys to reduce headspace. This will give me the option to try 4 different styles from this batch. Eh... wasn't feeling it and got lazy so I just drank from carboy and poured the rest."
     },
     {
         "id": "#2024-01",
