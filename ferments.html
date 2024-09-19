@@ -10,7 +10,7 @@ title: ferments
 {%- assign show_btn_text = "Show Log Details" -%}
 {%- assign hide_btn_text = "Hide Log Details" -%}
 <section>
-  <button id={{ button_id }} type="button" class="w-full border-2 border-solid rounded border-cursor border-love-moon hover:border-love-dawn mt-2 px-2 py-1 text-cursor text-love-moon hover:text-love-dawn">{{ show_btn_text }}</button>
+  <button id={{ button_id }} type="button" class="w-full border-2 border-solid rounded md:rounded-md lg:rounded-lg border-cursor border-love-moon hover:border-love-dawn mt-2 px-2 py-1 text-cursor text-love-moon hover:text-love-dawn">{{ show_btn_text }}</button>
 </section>
 
 {%- assign in_progress = site.data.ferments | where_exp: "item", "item.bottlingDate == nil" -%}

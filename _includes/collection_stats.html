@@ -13,6 +13,6 @@
 <section class="lg:columns-2">
   <p class="pb-2">There have been <strong>{{ collection_size }}</strong> {{ collection_name }} logged overall.</p>
   <div class="lg:float-right">
-    <button id={{ button_id }} type="button" onclick="window.open('{{ data_url | relative_url }}')" class="w-full border-2 border-solid rounded border-cursor border-love-moon hover:border-love-dawn xl:mt-0 lg:mt-1 mt-2 px-2 py-1 text-cursor text-love-moon hover:text-love-dawn">Download {{ data_file }}</button>
+    <button id={{ button_id }} type="button" onclick="window.open('{{ data_url | relative_url }}')" class="w-full border-2 border-solid rounded md:rounded-md lg:rounded-lg border-cursor border-love-moon hover:border-love-dawn xl:mt-0 lg:mt-1 mt-2 px-2 py-1 text-cursor text-love-moon hover:text-love-dawn">Download {{ data_file }}</button>
   </div>
 </section>
