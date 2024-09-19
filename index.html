@@ -14,19 +14,19 @@ layout: default
   <section class="pt-4">
     <h2 class="text-xl">info</h2>
     <ul class="list-inside list-disc">
-      <li><a href="https://github.com/{{ site.github_username }}" class="text-green-700 hover:text-green-500">github repo</a></li>
-      <li><a href="mailto:{{ site.email }}" class="text-green-700 hover:text-green-500">email</a></li>
-      <li><a href="https://www.linkedin.com/in/zach-churchill-9a8ab6318" class="text-green-700 hover:text-green-500">resume</a></li>
+      <li><a href="https://github.com/{{ site.github_username }}" class="text-cyan hover:text-selection">github repo</a></li>
+      <li><a href="mailto:{{ site.email }}" class="text-cyan hover:text-selection">email</a></li>
+      <li><a href="https://www.linkedin.com/in/zach-churchill-9a8ab6318" class="text-cyan hover:text-selection">resume</a></li>
     </ul>
   </section>
 
   <section class="pt-4">
     <h2 class="text-xl">collections</h2>
     <ul class="list-inside list-disc">
-      <li><a href="https://library.{{ site.cname }}" class="text-green-700 hover:text-green-500">library</a></li>
-      <li><a href="{% link books.html %}" class="text-green-700 hover:text-green-500">books</a></li>
-      <li><a href="{% link meads.html %}" class="text-green-700 hover:text-green-500">meads</a></li>
-      <li><a href="{% link ferments.html %}" class="text-green-700 hover:text-green-500">ferments</a></li>
+      <li><a href="https://library.{{ site.cname }}" class="text-cyan hover:text-selection">library</a></li>
+      <li><a href="{% link books.html %}" class="text-cyan hover:text-selection">books</a></li>
+      <li><a href="{% link meads.html %}" class="text-cyan hover:text-selection">meads</a></li>
+      <li><a href="{% link ferments.html %}" class="text-cyan hover:text-selection">ferments</a></li>
     </ul>
   </section>
 
@@ -36,7 +36,7 @@ layout: default
     {% for post in site.posts %}
       <li>
         <span class="font-mono pr-2">{{ post.date | date: "%Y-%m-%d" }}</span>
-        <a href="{{ post.url }}" class="text-green-700 hover:text-green-500">{{ post.title }}</a>
+        <a href="{{ post.url }}" class="text-cyan hover:text-selection">{{ post.title }}</a>
       </li>
     {% endfor %}
     </ul>
