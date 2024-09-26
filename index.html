@@ -22,7 +22,7 @@ layout: default
 
   <section class="pt-4">
     <h2 class="text-xl">collections</h2>
-    <ul class="list-inside list-disc space-y-1 md:space-y-0.5">
+    <ul class="list-inside list-disc space-y-1 md:space-y-1">
       <li><a href="https://library.{{ site.cname }}" class="text-foam-moon hover:text-foam-dawn">library</a></li>
       <li><a href="{% link books.html %}" class="text-foam-moon hover:text-foam-dawn">books</a></li>
       <li><a href="{% link meads.html %}" class="text-foam-moon hover:text-foam-dawn">meads</a></li>
@@ -32,13 +32,17 @@ layout: default
 
   <section class="pt-4">
     <h2 class="text-xl">posts</h2>
-    <ul class="list-inside list-disc space-y-1 md:space-y-0.5">
+    <ul class="list-inside list-disc space-y-2 md:space-y-0.5">
     {% for post in site.posts %}
-      <li>
-        <span class="font-mono text-subtle-moon pr-2">{{ post.date | date: "%Y-%m-%d" }}</span>
+      <li class="flex flex-col md:flex-row justify-start items-start md:items-end">
+        <span class="text-base font-mono text-subtle-moon pr-2">{{ post.date | date: "%Y-%m-%d" }}</span>
         <a href="{{ post.url }}" class="text-foam-moon hover:text-foam-dawn">{{ post.title }}</a>
       </li>
     {% endfor %}
     </ul>
   </section>
+
+  <footer class="text-sm mt-4 mb-8 md:mb-0">
+    <p>color palette provided by <a href="https://rosepinetheme.com/palette/" class="text-foam-moon hover:text-foam-dawn">rosé pine</a></p>
+  </footer>
 </div>

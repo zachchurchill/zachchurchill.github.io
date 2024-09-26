@@ -10,14 +10,9 @@
     {%- endif -%}
     <link rel="stylesheet" href={{ "./assets/css/main.css" | relative_url }} />
   </head>
-  <body class="container bg-background text-text h-screen w-fit 2xl:px-96 xl:px-80 lg:px-64 md:px-48 sm:px-28 px-12 py-12 flex flex-col gap-4 md:gap-2 justify-between">
+  <body class="container bg-background text-text text-lg h-full w-fit 2xl:px-96 xl:px-80 lg:px-64 md:px-48 sm:px-28 px-12 py-12">
     <main>
       {{ content }}
     </main>
-    {%- if page.name == "index.html" -%}
-    <footer class="text-sm mb-12">
-      <p>color palette provided by <a href="https://rosepinetheme.com/palette/" class="text-foam-moon hover:text-foam-dawn">rosé pine</a></p>
-    </footer>
-    {%- endif -%}
   </body>
 </html>
