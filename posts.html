@@ -1,0 +1,19 @@
+---
+layout: page
+---
+
+<section>
+  <h1 class="text-2xl lowercase">posts</h1>
+  <p>Enjoy the various thoughts, musings, and journal entries.</p>
+</section>
+
+<section class="mt-4 mb-8">
+  <ul class="list-inside list-disc space-y-2 md:space-y-0.5">
+  {% for post in site.posts %}
+    <li class="flex flex-col md:flex-row justify-start items-start md:items-end">
+      <span class="text-base font-mono text-subtle-moon pr-2">{{ post.date | date: "%Y-%m-%d" }}</span>
+      <a href="{{ post.url }}" class="text-foam-moon hover:text-foam-dawn">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+  </ul>
+</section>
