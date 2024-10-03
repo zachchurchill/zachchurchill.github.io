@@ -20,7 +20,7 @@ categories: blog
 
 I am excited to start a new side project!
 
-**settin' the stage**
+## settin' the stage
 
 I started a graduate program in Computer Science from
 [Franklin University](https://cs.franklin.edu/program.php?id=mscs)
@@ -39,7 +39,7 @@ Given that my whole family are avid readers -
 even my toddler has amassed quite a large collection of books, often with duplicates -
 I had the idea to create a web app to help catalogue these books for my data source.
 
-**the deets**
+## the deets
 
 As for the tech stack, here are my thoughts around why I am going to use Ruby on Rails styled with TailwindCSS and using Hotwire for a dynamic UI:
 - I use Java for my coursework and C#/.Net with React for the app at work &mdash; I chose to steer clear of these in my side project to help broaden my experiences.

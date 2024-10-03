@@ -13,7 +13,7 @@ at the start of the year.
 However, just a few weeks into my third course, "Analysis of Algorithms," I decided to end that pursuit.
 I'm choosing **projects** over coursework. **Software engineering** over computer science. **As-needed** over preemptive learning.
 
-**Some Background**
+## settin' the stage
 
 Around this time last year, I was wrapping up my first year back at
 [American Electric Power](https://www.aep.com/) (AEP)
@@ -39,7 +39,7 @@ Working on integrating and now owning the product, dubbed *ChatAEP*, rekindled m
 
 So, why stop a master's program designed to provide fundamental skills for a career in computer science?
 
-**What I Mean by a Builder**
+## what is a builder?
 
 Builders are people:
 - who enjoy the creative and technical challenge of figuring things out &mdash; documentation splunking & learning on the spot is essential
@@ -47,7 +47,7 @@ Builders are people:
 - who don't shy away from intimidating projects that require planning and administrative work &mdash; they enjoy some process
 - who embrace a *craftsman* mindset &mdash; skills are meant to be honed
 
-**Wrap-up**
+## wrap-up
 
 Being a builder, I see thoughtful self-learning as essential: what do I need to learn to successfully implement my ideas?
 
