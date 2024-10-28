@@ -55,3 +55,58 @@ Initially, what sessions do I plan on attending?
   - from Jeffrey Dotson, Dave Reed, Patrick Kaiser, Kumi Walker, Shereen Agrawal
 
 - Networking event @ 5p
+
+---
+
+# Conference notes
+
+## Plan & Goals
+
+Mostly followed above except I attended "Idea to Business Plan" at 2:45p & left afterwards.
+
+Met my goals where Derek DeHart was the person from Root & Akshat Saladi was the other person (kind of a cheat but I'll take it!)
+- One caveat is that my first goal was mostly fulfilled from the "Idea to Business Plan" talk
+
+## Morning Session
+
+- Talked with Akshat beforehand, checked out his site, interested in mobile & frontend, currently working with some folks on a start-up around a social calendar app.
+- "COMP-U-SERVE" - Shareen mentioned this was "built in our (OSU) backyard", what is this?
+- OSU has a "land grant mission" which roughly means that they are required to benefit the surrounding community.
+- Look at the book "I am a strange loop" by Doug Hofstadter
+- Look more into the "Center of Software Innovation"
+- Etsy maintains marketing & centeredness towards humans by applying AI/GenAI into the workflow/experience rather than highlighting it e.g., utilizing metadata and tags on seller images automatically, intergrating Ai/GenAI to alleviate "sameness" of general search queries.
+- TechStars fall cohort demo day is Dec 4th
+- Strong technologist + deep domain expert is a successful pairing for founders of a start-up (Dan Manges)
+- "How to cpature the most value with the limited engineering resources?" in addition to talent density are strong contributors to Dan M.'s success
+- "How can we use AI to understand the most valuable & productive ways to build and design software?" - check out what RWX is doing around this with query languages and static analysis.
+- Chase seems to have a surprising presence at OSU - briefly spoke with a couple folks from Chase.
+- "Automatic Scientific Reasoning"; "ReAct; new research by Huan Sun.
+  - How could this be useful for the DS team? What kind of Agents could be created for battery optimization?
+  - checkout Mind2Web & SeeAct by OSUNLP
+- AI Tinkerers monthly meet-ups coming to Columbus, first meet-up on Wed. Nov 6th
+- "AI removes barriers between data silos and distribution channels" - Ash
+- "AI can be instrumental at identifying and building your ideal customer profile (ICP) during ideation/business development" - Ash
+- check out using Claude with "artifacts"
+
+## AI Use cases
+
+- **Etsy**: Uses LLM to help guide specificity of the search query; LLM end-to-end vs finetuned; also title rewriting using prompting to create similarities between other items.
+- **Meta**: Works on Llama open-source team; started with fine tuning but failed miserably; then used RAG for Q&A agent for cutomer support; Llama stack for agentic & action-based workflows.
+- **OSU**: OSU Libraries enormous amount of artifacts need to meet rules & regulations around accessibility; clean-up metadata & garbage to ensure materials/docs actually accessible for screen readers. Check out GitHub for architecture design.
+- **Alignable**: 9.5M small businesses on network; identify & maintain connections to help grow businesses (70 employees). Utilizing LLM to help with taxonomy of business types to help improve search and identification of actual categorization/relationship building.
+- "Can you talk with a book - load the content, context about author, etc?" - Derek & Cory
+- Multi-modal + HITL for verification of search results - Etsy
+  - Only being used in non-mission critical aspects like related items rather than completely new user-facing products.
+- "Unsolvable problems not necessarily solvable but previously difficult problems have become tractable & less costly" - Derek
+- Etsy - keeps ROI aligned with north star metrics, not looking to create a new framework to measure value.
+
+## Idea to Business Plan
+
+- Need to validate the idea - is the problem big enough/worth it? Do this before building the solution. Who's the target audience/ICP?
+- Be way of biasing potential customers by sharing ideas and thoughts - work with them to validate the problem not the solution/idea.
+- Find the product market fit
+  - how does this tie into how the DS team generally works? Probably still good even if project-based.
+- Use surveys to affirm what's picked up from qualitative conversations.
+- User stores > Journey maps > Feature paths > Wireframes
+  - don't go to the coloring book first.
+- Don't reinvent the wheel; Find your differentiator; Avoid analysis paralysis => "Buy the basics; Build your IP"
