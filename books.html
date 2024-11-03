@@ -11,9 +11,13 @@ title: books
 <h2 class="text-lg">{{ year }}</h2>
 {% assign filtered_books = site.data.books | where: "year_read", year %}
 <p><strong>{{ filtered_books | size }}</strong> books read:</p>
-<ul id="books__{{ year }}" class="list-outside list-disc">
+<ul id="books__{{ year }}" class="list-outside list-disc space-y-2">
 {% for book in filtered_books %}
-  <li class="ms-4 mt-2">"{{ book.title }}" by {{ book.author }}</li>
+  <li class="flex flex-row space-x-1">
+    <p class="flex-none mx-2">&bullet;</p>
+    <p class="basis-9/12">"{{ book.title }}" by {{ book.author }}</p>
+    <p class="basis-2/12 flex-none h-fit text-sm text-center text-subtle-moon border rounded md:rounded-md lg:rounded-lg border-subtle-moon">{{ book.type }}</p>
+  </li>
 {% endfor %}
 </ul>
 {% endfor %}
