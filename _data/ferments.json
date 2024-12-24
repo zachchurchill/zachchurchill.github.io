@@ -431,12 +431,18 @@
         "yeast": "Lalvin ICV-D47",
         "startingSG": 1.100,
         "primaryStartDate": "04/07/2024",
-        "primaryEndingSG": null,
-        "secondaryStartDate": null,
-        "tertiaryStartDate": null,
-        "bottlingDate": null,
-        "finalSG": null,
-        "stabilized": false,
-        "backsweetened": false
+        "primaryEndingSG": 1.010,
+        "secondaryStartDate": "10/04/2024",
+        "tertiaryStartDate": "11/26/2024",
+        "bottlingDate": "12/24/2024",
+        "finalSG": "1.015 - 1.020",
+        "stabilized": true,
+        "backsweetened": true,
+        "notes": "adjusted with 1.25g, or 1/4 tsp, of tartaric acid at tertiary",
+        "oakStartDate": "11/10/2024",
+        "oakEndDate": "11/26/2024",
+        "oakType": "chips",
+        "oakFlavor": "French medium toast",
+        "oakAmount": "14 g"
     }
 ]
