@@ -5,6 +5,10 @@ date: 2024-10-18
 categories: blog
 ---
 
+## prep work
+
+### elevator pitch
+
 Write down some elevator pitches about self that captures who I am, what I do & why I'm at the conference.
 - I'm Zach Churchill, a tech lead at AEP focused on integrating GenAI into the enterprise.
 However, I'm actually here on my own accord to reconnect with the folks from the Columbus tech scene &
@@ -12,11 +16,15 @@ learn more about how folks are thinking about AI outside of the enterprise setti
 - Hey, Zach Churchill. Yeah I'm here to expand from my technical skills to learn about the journey builders face when building a product,
 specifically one that looks to incorporate AI/GenAI. It'd also be nice to reconnect with some folks I worked with at Root Insurance.
 
+### goals
+
 Define goals of attending the conference.
 - Learn about the challenges builders/founders face at the beginning of their journey: product owner mindset, finances, & acquiring customers.
 - Pick up some ideas around how folks are utilizing AI/GenAI in different settings.
 - Reconnect/catch-up with at least one person I worked with at Root Insurance.
 - Network with at least one person, focusing on learning more about them & why they are there.
+
+### etc
 
 Call-outs:
 - I'm more focused on listening to the presentations & panel discussions instead of the workshops.
@@ -28,13 +36,11 @@ Call-outs:
 I look forward to immersing myself into a scene/group of folks excited by the same topics.
 I feel like this is how I stay excited about being a builder.
 
----
-
 Past experiences with conferences/events:
 - attending Utility Analytics Institute conference in 2017
 - a random Google Cloud machine learning event in 2018 or 2019
 
----
+### plan
 
 Initially, what sessions do I plan on attending?
 - Opening session: 9a - 12:15p @ Performance Hall (1st floor)
@@ -58,16 +64,16 @@ Initially, what sessions do I plan on attending?
 
 ---
 
-# Conference notes
+## Conference notes
 
-## Plan & Goals
+### Plan & Goals
 
 Mostly followed above except I attended "Idea to Business Plan" at 2:45p & left afterwards.
 
 Met my goals where Derek DeHart was the person from Root & Akshat Saladi was the other person (kind of a cheat but I'll take it!)
 - One caveat is that my first goal was mostly fulfilled from the "Idea to Business Plan" talk
 
-## Morning Session
+### Morning Session
 
 - Talked with Akshat beforehand, checked out his site, interested in mobile & frontend, currently working with some folks on a start-up around a social calendar app.
 - "COMP-U-SERVE" - Shareen mentioned this was "built in our (OSU) backyard", what is this?
@@ -88,7 +94,7 @@ Met my goals where Derek DeHart was the person from Root & Akshat Saladi was the
 - "AI can be instrumental at identifying and building your ideal customer profile (ICP) during ideation/business development" - Ash
 - check out using Claude with "artifacts"
 
-## AI Use cases
+### AI Use cases
 
 - **Etsy**: Uses LLM to help guide specificity of the search query; LLM end-to-end vs finetuned; also title rewriting using prompting to create similarities between other items.
 - **Meta**: Works on Llama open-source team; started with fine tuning but failed miserably; then used RAG for Q&A agent for cutomer support; Llama stack for agentic & action-based workflows.
@@ -100,7 +106,7 @@ Met my goals where Derek DeHart was the person from Root & Akshat Saladi was the
 - "Unsolvable problems not necessarily solvable but previously difficult problems have become tractable & less costly" - Derek
 - Etsy - keeps ROI aligned with north star metrics, not looking to create a new framework to measure value.
 
-## Idea to Business Plan
+### Idea to Business Plan
 
 - Need to validate the idea - is the problem big enough/worth it? Do this before building the solution. Who's the target audience/ICP?
 - Be way of biasing potential customers by sharing ideas and thoughts - work with them to validate the problem not the solution/idea.
