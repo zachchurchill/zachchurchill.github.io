@@ -1,0 +1,23 @@
+---
+layout: page
+title: meads
+---
+
+{%- include collection_stats.html collection_name="meads" data_file="meads.csv" -%}
+
+{%- assign meaderys = site.data.meads | map: "meadery" | uniq -%}
+{%- for meadery in meaderys -%}
+  {% assign drinks_by_maker = site.data.meads | where: "meadery", meadery  %}
+  {% assign num_drinks = drinks_by_maker | size %}
+  <section class="my-2">
+    <h2 class="text-xl">{{ meadery }}</h2>
+    <p>
+      <strong>{{ num_drinks }}</strong> mead{% if num_drinks >1 %}s{% endif %} enjoyed:
+      <ul class="list-outside list-disc">
+      {% for drink in drinks_by_maker %}
+        <li class="ms-4 mt-1">{{ drink | map: "mead" }} &mdash; <span class="font-light">{{ drink | map: "flavors__tasting_notes" }}</li>
+      {% endfor %}
+      </ul>
+    </p>
+  </section>
+{%- endfor -%}
