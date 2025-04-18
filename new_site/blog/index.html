@@ -18,17 +18,17 @@
     </section>
 
     <section>
-      <ul>
-        <!-- TODO figure out how to do this dynamically in JavaScript, possibly keep JSON file to utilize -->
-        <li><span>2024-10-18</span><a href="2024/10/construct-io-conference/">Construct I/O</a></li>
-        <li><span>2024-09-23</span><a href="2024/09/betting-on-myself/">I am a self-learner and builder</a></li>
-        <li><span>2024-08-18</span><a href="2024/08/styled-with-tailwind/">Styled with TailwindCSS</a></li>
-        <li><span>2024-08-02</span><a href="2024/08/starting-the-churchill-library-with-ruby-on-rails/">The Churchill Library build with RoR</a></li>
-        <li><span>2024-04-14</span><a href="2024/04/removed-wines-and-ciders/">Removed Wines &amp; Ciders</a></li>
-        <li><span>2024-01-01</span><a href="2024/01/new-site-and-reading-goal/">New website &amp; 2024 reading goal</a></li>
-        <li><span>2023-11-24</span><a href="2023/11/updating-to-lists/">Updating to lists</a></li>
-        <li><span>2023-11-11</span><a href="2023/11/obligatory-first-website-post/">Welcome (back) to Jekyll!</a></li>
-      </ul>
+      <ul id="posts"></ul>
     </section>
+
+    <script>
+      <!-- NOTE generating these dynamically may affect SEO -->
+      document.addEventListener("DOMContentLoaded", () => {
+        loadPosts({
+          listId: "posts",
+          jsonPath: "posts.json"
+        });
+      });
+    </script>
   </body>
 </html>

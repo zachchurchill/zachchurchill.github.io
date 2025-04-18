@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Construct I/O",
+    "path": "2024/10/construct-io-conference/",
+    "date": "2024-10-18"
+  },
+  {
+    "name": "I am a self-learner and builder",
+    "path": "2024/09/betting-on-myself/",
+    "date": "2024-09-23"
+  },
+  {
+    "name": "Styled with TailwindCSS",
+    "path": "2024/08/styled-with-tailwind/",
+    "date": "2024-08-18"
+  },
+  {
+    "name": "The Churchill Library with RoR",
+    "path": "2024/08/starting-the-churchill-library-with-ruby-on-rails/",
+    "date": "2024-08-02"
+  },
+  {
+    "name": "Remove Wine & Ciders",
+    "path": "2024/04/removed-wines-and-ciders/",
+    "date": "2024-04-14"
+  },
+  {
+    "name": "New website & 2024 reading goal",
+    "path": "2024/01/new-site-and-reading-goal/",
+    "date": "2024-01-01"
+  },
+  {
+    "name": "Updating to lists",
+    "path": "2023/11/updating-to-lists/",
+    "date": "2023-11-24"
+  },
+  {
+    "name": "Welcome (back) to Jekyll",
+    "path": "2023/11/obligatory-first-website-post/",
+    "date": "2023-11-11"
+  }
+]
