@@ -36,6 +36,7 @@
 
       <section>
         <h1>posts</h1>
+        <!-- NOTE generating these dynamically may affect SEO -->
         <ul id="posts"></ul>
         <p>
           <a href="blog/">[more posts]</a>
@@ -48,11 +49,10 @@
     </div>
 
     <script>
-      <!-- NOTE generating these dynamically may affect SEO -->
       document.addEventListener("DOMContentLoaded", () => {
         loadPosts({
           listId: "posts",
-          jsonPath: "blog/posts.json",
+          pathPrefix: "blog/",
           topN: 5
         });
       });

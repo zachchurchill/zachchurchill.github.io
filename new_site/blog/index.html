@@ -18,15 +18,14 @@
     </section>
 
     <section>
+      <!-- NOTE generating these dynamically may affect SEO -->
       <ul id="posts"></ul>
     </section>
 
     <script>
-      <!-- NOTE generating these dynamically may affect SEO -->
       document.addEventListener("DOMContentLoaded", () => {
         loadPosts({
-          listId: "posts",
-          jsonPath: "posts.json"
+          listId: "posts"
         });
       });
     </script>
