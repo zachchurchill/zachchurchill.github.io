@@ -1,23 +1,35 @@
----
-layout: page
-title: meads
----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>meads | zach churchill</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/main.js" defer></script>
+  </head>
+  <body>
+    <section id="summary">
+      <!-- TODO add fun count-up animation using JS -->
+      <p>There have been <strong id="noMeads">0</strong> meads logged overall.</p>
+      <div>
+        <button id="downloadData" type="button" onclick="window.open('./meads.json')">Download meads</button>
+      </div>
+    </section>
 
-{%- include collection_stats.html collection_name="meads" data_file="meads.csv" -%}
-
-{%- assign meaderys = site.data.meads | map: "meadery" | uniq -%}
-{%- for meadery in meaderys -%}
-  {% assign drinks_by_maker = site.data.meads | where: "meadery", meadery  %}
-  {% assign num_drinks = drinks_by_maker | size %}
-  <section class="my-2">
-    <h2 class="text-xl">{{ meadery }}</h2>
-    <p>
-      <strong>{{ num_drinks }}</strong> mead{% if num_drinks >1 %}s{% endif %} enjoyed:
-      <ul class="list-outside list-disc">
-      {% for drink in drinks_by_maker %}
-        <li class="ms-4 mt-1">{{ drink | map: "mead" }} &mdash; <span class="font-light">{{ drink | map: "flavors__tasting_notes" }}</li>
-      {% endfor %}
-      </ul>
-    </p>
-  </section>
-{%- endfor -%}
+    <section id="meadsByMeadery">
+    </section>
+    <script defer>
+      fetch("./meads.json")
+        .then(res => res.json())
+        .then(meads => {
+          document.getElementById("noMeads").innerText = meads.length;
+          listMeadsByMeadery({ meads: meads });
+        })
+        .catch(err => {
+          console.error("Error loading meads.json", err);
+          document.getElementById("noMeads").innerText = "-";
+        })
+    </script>
+  </body>
+</html>

@@ -79,3 +79,56 @@ function listBooksByYear({ books, year, sectionId = "booksByYear" }) {
   section.appendChild(ul);
 }
 window.listBooksByYear = listBooksByYear;
+
+
+/**
+  * Displays the meads enjoyed by each meadery provided in the list of objects.
+  * The elements include a header for meadery name, summary of meads enjoyed,
+  * and an unordered list of mead name plus tasting notes.
+  *
+  * @param {Object} options - Configuration options.
+  * @param {Object[]} options.meads - An array of books objects with keys for `meadery`, `mead`, and `tastingNotes`.
+  * @param {string} [options.sectionId="meadsByMeadery"] - ID associated with section to inject elements into.
+  */
+function listMeadsByMeadery({ meads, sectionId = "meadsByMeadery" }) {
+  if (!meads || meads.length === 0) {
+    console.warn("meads not provided");
+    return;
+  }
+
+  const section = document.getElementById(sectionId);
+  if (!section) {
+    console.error(`${sectionId} does not exist in document`);
+    return;
+  }
+
+  const meaderies = [...new Set(meads.map(mead => mead.meadery).sort())];
+  meaderies.forEach(meadery => {
+    const relevantMeads = meads.filter(mead => mead.meadery === meadery);
+
+    const meaderySection = document.createElement("section");
+    meaderySection.classList.add("meadery");
+    const header = document.createElement("h1");
+    header.innerText = meadery;
+    const meadSummary = document.createElement("p");
+    meadSummary.innerHTML = `<strong>${relevantMeads.length}</strong> mead${relevantMeads.length > 0 ? "s" : ""} enjoyed:`;
+    const ul = document.createElement("ul");
+    ul.classList.add("meads");
+    relevantMeads.forEach(mead => {
+      let li = document.createElement("li");
+      li.classList.add("mead");
+      let tastingNotesSpan = document.createElement("span");
+      tastingNotesSpan.classList.add("mead-tasting-notes");
+      tastingNotesSpan.innerText = mead.tastingNotes;
+      li.innerHTML = `${mead.mead} &mdash; `;
+      li.appendChild(tastingNotesSpan);
+      ul.appendChild(li);
+    });
+    meaderySection.appendChild(header);
+    meaderySection.appendChild(meadSummary);
+    meaderySection.appendChild(ul);
+
+    section.appendChild(meaderySection);
+  });
+}
+window.listMeadsByMeadery = listMeadsByMeadery;
