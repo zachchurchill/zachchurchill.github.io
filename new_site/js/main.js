@@ -48,12 +48,14 @@ window.loadPosts = loadPosts;
 function listBooksByYear({ books, year, sectionId = "booksByYear" }) {
   const booksForYear = books.filter(book => book.yearRead === year);
   if (!booksForYear || booksForYear.length === 0) {
-    console.log(`no books read in ${year}`);
+    console.warn(`no books read in ${year}`);
+    return;
   }
 
   const section = document.getElementById(sectionId);
   if (!section) {
     console.error(`${sectionId} does not exist in document`);
+    return;
   }
 
   const header = document.createElement("h2");
