@@ -24,4 +24,38 @@ function loadPosts({ listId, pathPrefix = null, topN = null }) {
     });
 }
 
+
+function listBooksByYear({ books, year, sectionId = "booksByYear" }) {
+  const booksForYear = books.filter(book => book.yearRead === year);
+  if (!booksForYear || booksForYear.length === 0) {
+    console.log(`no books read in ${year}`);
+  }
+
+  const section = document.getElementById(sectionId);
+  if (!section) {
+    console.error(`${sectionId} does not exist in document`);
+  }
+
+  const header = document.createElement("h2");
+  header.innerText = year;
+  const yearSummary = document.createElement("p");
+  yearSummary.innerHTML = `<strong>${booksForYear.length}</strong> books read:`;
+  const ul = document.createElement("ul");
+  ul.classList.add("books");
+  booksForYear.forEach(book => {
+    const li = document.createElement("li");
+    li.classList.add("book");
+    const bookTypeSpan = document.createElement("span");
+    bookTypeSpan.classList.add("book-type");
+    bookTypeSpan.textContent = book.type;
+    li.append(`"${book.title}" by ${book.author} `);
+    li.appendChild(bookTypeSpan);
+    ul.appendChild(li);
+  });
+  section.appendChild(header);
+  section.appendChild(yearSummary);
+  section.appendChild(ul);
+}
+
 window.loadPosts = loadPosts;
+window.listBooksByYear = listBooksByYear;

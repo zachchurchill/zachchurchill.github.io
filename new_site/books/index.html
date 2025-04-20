@@ -1,24 +1,38 @@
----
-layout: page
-title: books
----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>books | zach churchill</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/main.js" defer></script>
+  </head>
+  <body>
+    <section id="summary">
+      <!-- TODO add fun count-up animation using JS -->
+      <p>There have been <strong id="noBooks">0</strong> books logged overall.</p>
+      <div>
+        <button id="downloadData" type="button" onclick="window.open('./books.json')">Download books</button>
+      </div>
+    </section>
 
-{%- include collection_stats.html collection_name="books" data_file="books.csv" -%}
+    <section id="booksByYear">
+    </section>
 
-{% assign unique_years = site.data.books | map: "year_read" | uniq | reverse %}
-{% for year in unique_years %}
-<section class="pt-4">
-<h2 class="text-lg">{{ year }}</h2>
-{% assign filtered_books = site.data.books | where: "year_read", year %}
-<p><strong>{{ filtered_books | size }}</strong> books read:</p>
-<ul id="books__{{ year }}" class="list-outside list-disc space-y-2">
-{% for book in filtered_books %}
-  <li class="flex flex-row space-x-1">
-    <p class="flex-none mx-2">&bullet;</p>
-    <p class="basis-9/12">"{{ book.title }}" by {{ book.author }}</p>
-    <p class="basis-2/12 flex-none h-fit text-sm text-center text-subtle-moon border rounded md:rounded-md lg:rounded-lg border-subtle-moon">{{ book.type }}</p>
-  </li>
-{% endfor %}
-</ul>
-{% endfor %}
-</section>
+    <script defer>
+      fetch("./books.json")
+        .then(res => res.json())
+        .then(books => {
+          document.getElementById("noBooks").innerText = books.length;
+          listBooksByYear({ books: books, year: 2025 });
+          listBooksByYear({ books: books, year: 2024 });
+          listBooksByYear({ books: books, year: 2023 });
+        })
+        .catch(err => {
+          console.error("Error loading books.json", err);
+          document.getElementById("noBooks").innerText = "-";
+        })
+    </script>
+  </body>
+</html>
