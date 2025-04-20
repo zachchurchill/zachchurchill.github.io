@@ -1,3 +1,12 @@
+/**
+  * Loads blog posts from JSON file using provided path prefix
+  * and injects them as anchor tags within a list element.
+  *
+  * @param {Object} options - Configuration options .
+  * @param {string} options.listId - The ID of the element to insert posts into.
+  * @param {string} [options.pathPrefix=null] - Path prefix from HTML file to blog/posts.json e.g., in index.html this would be "blog/".
+  * @param {number} [options.topN=null] - Maximum number of posts to display. If not provided then all posts displayed.
+  */
 function loadPosts({ listId, pathPrefix = null, topN = null }) {
   const list = document.getElementById(listId);
   if (!list) {
@@ -23,8 +32,19 @@ function loadPosts({ listId, pathPrefix = null, topN = null }) {
       console.error("error loading and generating posts:", err);
     });
 }
+window.loadPosts = loadPosts;
 
 
+/**
+  * Displays the books read from a given year in the provide section with a
+  * header for the year, summary of books read within the read, and an unordered
+  * list of book title, author and type.
+  *
+  * @param {Object} options - Configuration options.
+  * @param {Object[]} options.books - An array of books objects with keys for `title`, `author`, `yearRead`, and `type`.
+  * @param {number} options.year - Year that will be used to filter `options.books`.
+  * @param {string} [options.sectionId="booksByYear"] - ID associated with section to inject elements into.
+  */
 function listBooksByYear({ books, year, sectionId = "booksByYear" }) {
   const booksForYear = books.filter(book => book.yearRead === year);
   if (!booksForYear || booksForYear.length === 0) {
@@ -56,6 +76,4 @@ function listBooksByYear({ books, year, sectionId = "booksByYear" }) {
   section.appendChild(yearSummary);
   section.appendChild(ul);
 }
-
-window.loadPosts = loadPosts;
 window.listBooksByYear = listBooksByYear;
