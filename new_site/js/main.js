@@ -124,3 +124,55 @@ function listMeadsByMeadery({ meads, sectionId = "meadsByMeadery" }) {
   });
 }
 window.listMeadsByMeadery = listMeadsByMeadery;
+
+
+/**
+  * Displays details about fermentation projects.
+  *
+  * @param {Object} options - Configuration options .
+  * @param {Object[]} options.ferments - An array of ferment objects with keys for `id`, `ferment`, `type`, `gallon`, `yeast`, `startingSG`, `primaryStateDate`, `primaryEndingSG`, `secondaryStartDate`, `tertiaryStateDate`, `bottlingDate`, `finalSG`, `stabilized` and `backsweetened`. Optionally, there can be keys for `carbonationMethod`, `oakStateDate`, `oakEndDate`, `oakType`, `oakFlavor`, and `oakAmount`.
+  * @param {string} options.listId - The ID of the element to insert ferments into.
+  */
+function listFerments({ ferments, listId }) {
+  const list = document.getElementById(listId);
+  if (!list) {
+    console.warn(`list element with ID "${listId}" not found`);
+    return;
+  }
+
+  ferments.forEach(ferment => {
+    const li = document.createElement("li");
+    li.classList.add("ferment");
+    li.innerText = `"${ ferment.ferment }" (${ ferment.id } - ${ ferment.type})`;
+
+    const detailsList = document.createElement("ul");
+    const started = document.createElement("li");
+    started.innerText = `Started ${ ferment.primaryStartDate }${ ferment.startingSG !== null ? " with SG ~ " + ferment.startingSG : ""}`;
+    detailsList.appendChild(started);
+    if (ferment.bottlingDate !== null) {
+      const completed = document.createElement("li");
+      completed.innerText = `Bottled ${ ferment.bottlingDate }`;
+      if (ferment.finalSG !== null) {
+        completed.append(` with final SG ~ ${ ferment.finalSG }`);
+      }
+      detailsList.appendChild(completed);
+    }
+    const batch = document.createElement("li");
+    batch.innerText = `${ ferment.gallon } gallon batch using ${ ferment.yeast}`;
+    detailsList.appendChild(batch);
+    if (ferment.oakStartDate !== undefined) {
+      const oaked = document.createElement("li");
+      oaked.innerText = `Oaked using ${ ferment.oakAmount } of ${ ferment.oakFlavor } ${ ferment.oakType } ${ ferment.oakEndDate !== undefined ? "from " + ferment.oakStartDate + " to " + ferment.oakEndDate : "since " + ferment.oakStartDate }`;
+      detailsList.appendChild(oaked);
+    }
+    if (ferment.carbonationMethod !== undefined) {
+      const carbonated = document.createElement("li");
+      carbonated.innerText = `Carbonated via ${ ferment.carbonationMethod }`;
+      detailsList.appendChild(carbonated);
+    }
+
+    li.appendChild(detailsList);
+    list.appendChild(li);
+  });
+}
+window.listFerments = listFerments;

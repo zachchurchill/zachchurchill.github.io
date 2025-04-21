@@ -1,100 +1,63 @@
----
-layout: page
-title: ferments
----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ferments | zach churchill</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/main.js" defer></script>
+  </head>
+  <body>
+    <section id="summary">
+      <!-- TODO add fun count-up animation using JS -->
+      <p>There have been <strong id="noFerments">0</strong> ferments logged overall.</p>
+      <div>
+        <button id="downloadData" type="button" onclick="window.open('./ferments.json')">Download ferments</button>
+      </div>
+    </section>
 
-{%- include collection_stats.html collection_name="ferments" data_file="ferments.json" -%}
+    <section>
+      <h1>still cookin'</h1>
+      <p id="stillCookinSummary"><strong id="noStillCookin">-</strong> still aging:</p>
+      <ul id="fermentsStillCookin" class="ferments"></ul>
+    </section>
 
-{%- assign button_id = "include_details" -%}
-{%- assign details_ul_class = "ferment_details" -%}
-{%- assign show_btn_text = "Show Log Details" -%}
-{%- assign hide_btn_text = "Hide Log Details" -%}
-<section>
-  <button id={{ button_id }} type="button" class="w-full border-2 border-solid rounded md:rounded-md lg:rounded-lg border-cursor border-love-moon hover:border-love-dawn mt-2 px-2 py-1 text-cursor text-love-moon hover:text-love-dawn">{{ show_btn_text }}</button>
-</section>
+    <section>
+      <h1>completed</h1>
+      <p><strong id="noCompleted">-</strong> completed and bottled:</p>
+      <ul id="fermentsCompleted" class="ferments"></ul>
+    </section>
 
-{%- assign in_progress = site.data.ferments | where_exp: "item", "item.bottlingDate == nil" -%}
-<section class="my-2">
-  <h2 class="text-xl">still cookin'</h2>
-  <p>
-    <strong>{{ in_progress | size }}</strong> ferments still aging:
-    <ul class="list-outside list-disc">
-    {% for ferment in in_progress %}
-      <li class="ms-4 mt-1">
-        "{{ ferment.ferment }}" ({{ ferment.id }} - {{ ferment.type }})
-        <ul class="{{ details_ul_class }} list-outside list-[circle] hidden text-sm">
-          <li class="ms-4 mt-1">Started {{ ferment.primaryStartDate }}{% if ferment.startingSG != nil %} with SG ~ {{ ferment.startingSG }}{% endif %}</li>
-          <li class="ms-4 mt-1">{{ ferment.gallon }} gallon batch using {{ ferment.yeast }}</li>
-          {% if ferment.oakStartDate != nil %}
-          <li class="ms-4 mt-1">
-            Oaked using {{ ferment.oakAmount }} of {{ ferment.oakFlavor }} {{ ferment.oakType}}
-            {% if ferment.oakEndDate != nil %}from {{ ferment.oakStartDate }} to {{ ferment.oakEndDate }}
-            {% else %}since {{ ferment.oakStartDate }}
-            {% endif %}
-          </li>
-          {% endif %}
-        </ul>
-      </li>
-    {% endfor %}
-    </ul>
-  </p>
-</section>
+    <script defer>
+      fetch("./ferments.json")
+        .then(res => res.json())
+        .then(ferments => {
+          document.getElementById("noFerments").innerText = ferments.length;
 
-{%- assign completed = site.data.ferments | where_exp: "item", "item.bottlingDate != nil" -%}
-<section class="my-2">
-  <h2 class="text-xl">completed</h2>
-  <p>
-    <strong>{{ completed | size }}</strong> ferments completed and bottled:
-    <ul class="list-outside list-disc">
-      {% for ferment in completed %}
-      <li class="ms-4 my-1">
-        "{{ ferment.ferment }}" ({{ ferment.id }} - {{ ferment.type }})
-        <ul class="{{ details_ul_class }} list-outside list-[circle] hidden text-sm">
-          <li class="ms-4 mt-1">Started {{ ferment.primaryStartDate }}{% if ferment.startingSG != nil %} with SG ~ {{ ferment.startingSG }}{% endif %}</li>
-          <li class="ms-4 mt-1">Bottled {{ ferment.bottlingDate }}{% if ferment.finalSG != nil %} with final SG ~ {{ ferment.finalSG }}{% endif %}</li>
-          <li class="ms-4 mt-1">{{ ferment.gallon }} gallon batch using {{ ferment.yeast }}</li>
-          {% if ferment.oakStartDate != nil %}
-          <li class="ms-4 mt-1">
-            Oaked using {{ ferment.oakAmount }} of {{ ferment.oakFlavor }} {{ ferment.oakType}}
-            {% if ferment.oakEndDate != nil %}
-            from {{ ferment.oakStartDate }} to {{ ferment.oakEndDate }}
-            {% else %}
-            since {{ ferment.oakStartDate }}
-            {% endif %}
-            </li>
-          {% endif %}
-          {% if ferment.carbonationMethod != nil %}
-          <li class="ms-4 mt-1">Carbonated via {{ ferment.carbonationMethod }}</li>
-          {% endif %}
-        </ul>
-      </li>
-      {% endfor %}
-    </ul>
-  </p>
-</section>
+          const stillCookin = ferments.filter(ferment => ferment.bottlingDate === null || ferment.bottlingDate === undefined);
+          if (stillCookin.length > 0) {
+            document.getElementById("noStillCookin").innerText = stillCookin.length;
+            listFerments({
+              ferments: ferments,
+              listId: "fermentsStillCookin"
+            });
+          } else {
+            document.getElementById("stillCookinSummary").innerText = "nothin' in the pot right now.";
+            document.getElementById("fermentsStillCookin").remove();
+          }
 
-<script>
-function show_hide_button() {
-    var flavors = document.getElementsByClassName("{{ details_ul_class }}");
-    for (var i = 0; i < flavors.length; i++) {
-        if (flavors[i].classList.contains("hidden")) {
-            flavors[i].classList.remove("hidden");
-            flavors[i].classList.add("block");
-        } else {
-            flavors[i].classList.remove("block");
-            flavors[i].classList.add("hidden");
-        }
-    }
-
-    var btn = document.getElementById("{{ button_id }}");
-    if (btn.textContent === "{{ show_btn_text }}") {
-        btn.textContent = "{{ hide_btn_text }}";
-    } else {
-        btn.textContent = "{{ show_btn_text }}";
-    }
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("{{ button_id }}").addEventListener("click", show_hide_button);
-});
-</script>
+          const completed = ferments.filter(ferment => ferment.bottlingDate !== null || ferment.bottlingDate !== undefined);
+          document.getElementById("noCompleted").innerText = completed.length;
+          listFerments({
+            ferments: ferments,
+            listId: "fermentsCompleted"
+          });
+        })
+        .catch(err => {
+          console.error("Error loading and displaying ferments.json", err);
+          document.getElementById("noFerments").innerText = "-";
+        })
+    </script>
+  </body>
+</html>
