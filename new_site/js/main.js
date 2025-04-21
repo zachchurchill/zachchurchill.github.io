@@ -1,38 +1,30 @@
 /**
-  * Loads blog posts from JSON file using provided path prefix
-  * and injects them as anchor tags within a list element.
+  * Displays blog posts as anchor tags within a list element.
   *
   * @param {Object} options - Configuration options .
-  * @param {string} options.listId - The ID of the element to insert posts into.
+  * @param {Object[]} options.posts - An array of post objects with keys for `date`, `path`, and `name`.
+  * @param {string} [options.listId="posts"] - The ID of the element to insert posts into.
   * @param {string} [options.pathPrefix=null] - Path prefix from HTML file to blog/posts.json e.g., in index.html this would be "blog/".
   * @param {number} [options.topN=null] - Maximum number of posts to display. If not provided then all posts displayed.
   */
-function loadPosts({ listId, pathPrefix = null, topN = null }) {
+function listPosts({ posts, listId = "posts", pathPrefix = null, topN = null }) {
   const list = document.getElementById(listId);
   if (!list) {
     console.warn(`list element with ID "${listId}" not found`);
     return;
   }
 
-  const jsonPath = `${pathPrefix !== null ? pathPrefix : "./"}posts.json`;
-  fetch(jsonPath)
-    .then(res => res.json())
-    .then(posts => {
-      const postsToShow = topN !== null ? topN : posts.length;
-      posts.slice(0, postsToShow).forEach(post => {
-        const li = document.createElement("li");
-        li.innerHTML = `
-          <span>${post.date}</span>
-          <a href="${pathPrefix !== null ? pathPrefix : ""}${post.path}">${post.name}</a>
-        `;
-        list.appendChild(li);
-      });
-    })
-    .catch(err => {
-      console.error("error loading and generating posts:", err);
-    });
+  const postsToShow = topN !== null ? topN : posts.length;
+  posts.slice(0, postsToShow).forEach(post => {
+    const li = document.createElement("li");
+    li.innerHTML = `
+      <span>${post.date}</span>
+      <a href="${pathPrefix !== null ? pathPrefix : ""}${post.path}">${post.name}</a>
+    `;
+    list.appendChild(li);
+  });
 }
-window.loadPosts = loadPosts;
+window.listPosts = listPosts;
 
 
 /**

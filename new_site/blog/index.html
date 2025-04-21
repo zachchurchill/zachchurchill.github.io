@@ -22,12 +22,17 @@
       <ul id="posts"></ul>
     </section>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        loadPosts({
-          listId: "posts"
+    <script defer>
+      fetch("posts.json")
+        .then(res => res.json())
+        .then(posts => {
+          listPosts({
+            posts: posts,
+          });
+        })
+        .catch(err => {
+          console.error("Error loading posts", err);
         });
-      });
     </script>
   </body>
 </html>

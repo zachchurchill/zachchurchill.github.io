@@ -48,14 +48,19 @@
       </footer>
     </div>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        loadPosts({
-          listId: "posts",
-          pathPrefix: "blog/",
-          topN: 5
+    <script defer>
+      fetch("blog/posts.json")
+        .then(res => res.json())
+        .then(posts => {
+          listPosts({
+            posts: posts,
+            pathPrefix: "blog/",
+            topN: 5
+          });
+        })
+        .catch(err => {
+          console.error("Error loading and listing posts", err);
         });
-      });
     </script>
   </body>
 </html>
