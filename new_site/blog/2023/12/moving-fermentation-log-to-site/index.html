@@ -1,26 +1,35 @@
----
-layout: "post"
-title:  "Fermentation log now available"
-date:   2023-12-03
-categories: blog
----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fermentation log now available | zach churchill</title>
+    <link rel="icon" type="image/x-icon" href="../../../../favicon.ico" />
+    <link rel="stylesheet" href="../../../../css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a id="back-home" href="../../../../index.html">~</a></li>
+          <li><a id="back-one" href="../../../index.html" onclick="goBack()">..</a></li>
+        </ul>
+      </nav>
+    </header>
 
-There we go!
-Visibility on all of the
-[ferments]({% link ferments.html %})
-I've made is now available.
+    <article id="post">
+      <header>
+        <h1>Fermentation log now available</h1>
+        <p><time datetime="2023-12-03">2023-12-03</time></p>
+      </header>
 
-Moving this data to my site has finally removed my reliance on Google products to store my collections.
-The fermentation log was a bit of a doozy but I'm happy I decided to go with JSON over CSV to store the data
-(full data downloads on each page is forthcoming) -
-it makes the data way more readable when editing and provides more flexibility in the schema e.g.,
-I can keep the main 13 or so fields for each record but expand with carbonation and oaking for the ones that need it.
+      <section>
+        <p>There we go! Visibility on all of the <a href="../../../../ferments/">ferments</a> I've made is now available.</p>
 
-Although I got a simple representation of the log up in my collections,
-I think there is more to be done.
-That is,
-this collection and some of the others like
-[books]({% link books.html %})
-are ripe for summarization and fancy graphs.
-Not making any real promises,
-but I think it may be interesting to try out incorporating some D3.js graphics in the future.
+        <p>Moving this data to my site has finally removed my reliance on Google products to store my collections. The fermentation log was a bit of a doozy but I'm happy I decided to go with JSON over CSV to store the data (full data downloads on each page is forthcoming) - it makes the data way more readable when editing and provides more flexibility in the schema e.g., I can keep the main 13 or so fields for each record but expand with carbonation and oaking for the ones that need it.</p>
+
+        <p>Although I got a simple representation of the log up in my collections, I think there is more to be done. That is, this collection and some of the others like <a href="../../../../books/">books</a> are ripe for summarization and fancy graphs. Not making any real promises, but I think it may be interesting to try out incorporating some D3.js graphics in the future.</p>
+      </section>
+    </article>
+  </body>
+</html>
