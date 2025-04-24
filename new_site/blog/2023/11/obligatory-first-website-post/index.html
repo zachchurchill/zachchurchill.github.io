@@ -1,25 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Welcome (back) to Jekyll | zach churchill</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/main.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a id="back-home" href="../../../../index.html">~</a></li>
+          <li><a id="back-one" href="../../../index.html" onclick="goBack()">..</a></li>
+        </ul>
+      </nav>
+    </header>
 
----
-layout: post
-title:  "Welcome (back) to Jekyll!"
-date:   2023-11-11
-categories: blog
----
+    <article id="post">
+      <header>
+        <h1>Welcome (back) to Jekyll!</h1>
+        <p><time datetime="2023-11-11">2023-11-11</time></p>
+      </header>
 
-After messing around with different websites and themes I landed on
-[no style, please!](https://riggraz.dev/no-style-please/).
-
-Given this website mainly serves as my mechanism to keep track of various lists,
-and provide them in a format that's easy to share, I figure style is not too important.
-
-My current set of collections are:
-books,
-meads,
-wines,
-ciders,
-and whiskeys.
-
-My hope is to expand on these with:
-blog posts,
-fermentation journal entries/project tracker,
-and book "reviews".
+      <section>
+        <p>After messing around with different websites and themes I landed on <a href="https://riggraz.dev/no-style-please/">no style, please!</a>.</p>
+        <p>Given this website mainly serves as my mechanism to keep track of various lists, and provide them in a format that's easy to share, I figure style is not too important.</p>
+        <p>My current set of collections are: books, meads, wines, ciders, and whiskeys.</p>
+        <p>My hope is to expand on these with: blog posts, fermentation journal entries/project tracker, and book "reviews".</p>
+      </section>
+    </article>
+  </body>
+</html>
