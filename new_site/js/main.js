@@ -1,4 +1,15 @@
 /**
+  * Go back to the previous entry in the session history, doing nothing if no history present.
+  */
+function goBack() {
+  if (window.history.length > 1) {
+    window.history.back();
+  }
+}
+window.goBack = goBack;
+
+
+/**
   * Displays blog posts as anchor tags within a list element.
   *
   * @param {Object} options - Configuration options .
