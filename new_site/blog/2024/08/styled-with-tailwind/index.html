@@ -1,15 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Styled with TailwindCSS | zach churchill</title>
+    <link rel="icon" type="image/x-icon" href="../../../../favicon.ico" />
+    <link rel="stylesheet" href="../../../../css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a id="back-home" href="../../../../index.html">~</a></li>
+          <li><a id="back-one" href="../../../index.html" onclick="goBack()">..</a></li>
+        </ul>
+      </nav>
+    </header>
 
----
-layout: "post"
-title: "Styled with TailwindCSS"
-date: 2024-08-18
-categories: blog
----
+    <article id="post">
+      <header>
+        <h1>Styled with TailwindCSS</h1>
+        <p><time datetime="2024-08-18">2024-08-18</time></p>
+      </header>
 
-[Initially]({%- post_url 2023-11-11-obligatory-first-website-post -%}),
-I didn't plan to care much about the style of my website,
-but learning more about [TailwindCSS](https://tailwindcss.com/) has made me excited to customize its appearance.
-It's better in my mind than frameworks like Bootstrap because Tailwind just provides utility classes &mdash; these classes allow you to build up your style rather than relying on pre-defined looks and feels.
-Now granted, frameworks like Bootstrap are likely providing people with websites that look better than my redesign but Tailwind also provides me with a lower level of control that I found I value.
-"raw dogging some CSS", as I've heard [ThePrimeagen](https://www.twitch.tv/theprimeagen) refer to it as, feels like it requires too much upfront work for someone who cares about control but not enough to mess around with the complicated world of handwritten CSS media queries and browser capabilities.
-I am very happy to have been introduced to Tailwind at work and found this website redesign to be some nice practice for [my forthcoming side project]({%- post_url 2024-08-02-starting-the-churchill-library-with-ruby-on-rails -%}).
+      <section>
+        <p><a href="../../../2023/11/obligatory-first-website-post/">Initially</a> I didn't plan to care much about the style of my website, but learning more about <a href="https://tailwindcss.com/">TailwindCSS</a> has made me excited to customize its appearance. It's better in my mind than frameworks like Bootstrap because Tailwind just provides utility classes &mdash; these classes allow you to build up your style rather than relying on pre-defined looks and feels. Now granted, frameworks like Bootstrap are likely providing people with websites that look better than my redesign but Tailwind also provides me with a lower level of control that I found I value. "raw dogging some CSS", as I've heard <a href="https://www.twitch.tv/theprimeagen">ThePrimeagen</a> refer to it as, feels like it requires too much upfront work for someone who cares about control but not enough to mess around with the complicated world of handwritten CSS media queries and browser capabilities. I am very happy to have been introduced to Tailwind at work and found this website redesign to be some nice practice for <a href="../starting-the-churchill-library-with-ruby-on-rails/">my forthcoming side project</a>.</p>
+      </section>
+    </article>
+  </body>
+</html>
