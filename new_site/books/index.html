@@ -29,6 +29,10 @@
     <section id="booksByYear">
     </section>
 
+    <footer>
+      <button id="back-to-top" onclick="scrollToTop()">&uarr; <span>back to top</span></button>
+    </footer>
+
     <script defer>
       fetch("./books.json")
         .then(res => res.json())

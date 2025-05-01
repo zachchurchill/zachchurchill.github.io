@@ -38,6 +38,10 @@
       <ul id="fermentsCompleted" class="ferments"></ul>
     </section>
 
+    <footer>
+      <button id="back-to-top" onclick="scrollToTop()">&uarr; <span>back to top</span></button>
+    </footer>
+
     <script defer>
       fetch("./ferments.json")
         .then(res => res.json())

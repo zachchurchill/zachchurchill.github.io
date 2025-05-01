@@ -28,6 +28,11 @@
 
     <section id="meadsByMeadery">
     </section>
+
+    <footer>
+      <button id="back-to-top" onclick="scrollToTop()">&uarr; <span>back to top</span></button>
+    </footer>
+
     <script defer>
       fetch("./meads.json")
         .then(res => res.json())

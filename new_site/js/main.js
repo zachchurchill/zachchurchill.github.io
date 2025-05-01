@@ -10,6 +10,18 @@ window.goBack = goBack;
 
 
 /**
+  * Utilizes builtin window functionality to smoothly scroll to top of the window.
+  */
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
+window.scrollToTop = scrollToTop;
+
+
+/**
   * Displays blog posts as anchor tags within a list element.
   *
   * @param {Object} options - Configuration options .
