@@ -29,8 +29,9 @@ window.scrollToTop = scrollToTop;
   * @param {string} [options.listId="posts"] - The ID of the element to insert posts into.
   * @param {string} [options.pathPrefix=null] - Path prefix from HTML file to blog/posts.json e.g., in index.html this would be "blog/".
   * @param {number} [options.topN=null] - Maximum number of posts to display. If not provided then all posts displayed.
+  * @param {string} [options.dateSpanClassname="post-date"] - Class name to use for span containing the post date in the list item.
   */
-function listPosts({ posts, listId = "posts", pathPrefix = null, topN = null }) {
+function listPosts({ posts, listId = "posts", pathPrefix = null, topN = null, dateSpanClassname = "post-date" }) {
   const list = document.getElementById(listId);
   if (!list) {
     console.warn(`list element with ID "${listId}" not found`);
@@ -41,7 +42,7 @@ function listPosts({ posts, listId = "posts", pathPrefix = null, topN = null }) 
   posts.slice(0, postsToShow).forEach(post => {
     const li = document.createElement("li");
     li.innerHTML = `
-      <span>${post.date}</span>
+      <span class=${dateSpanClassname}>${post.date}</span>
       <a href="${pathPrefix !== null ? pathPrefix : ""}${post.path}">${post.name}</a>
     `;
     list.appendChild(li);
