@@ -1,8 +1,6 @@
 ---
-layout: "post"
 title:  "Removed Wines & Ciders"
 date:   2024-04-14
-categories: blog
 ---
 
 I haven't really been drinking these lately and the ones that I do drink I am unlikely to seek out again.

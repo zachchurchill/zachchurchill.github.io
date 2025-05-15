@@ -1,8 +1,6 @@
 ---
-layout: "post"
 title:  "New website & 2024 reading goal"
 date:   2024-01-01
-categories: blog
 ---
 
 During the holiday break,

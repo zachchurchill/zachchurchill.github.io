@@ -1,8 +1,6 @@
 ---
-layout: "post"
 title:  "Updating to lists"
 date:   2023-11-24
-categories: blog
 ---
 
 What an excellent exercise in Liquid templating and introductory JavaScript!

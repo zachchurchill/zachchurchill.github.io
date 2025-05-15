@@ -14,3 +14,15 @@ plugins:
 
 postcss:
   cache: false
+
+collections:
+  posts:
+    permalink: /:collection/:year/:month/:title/
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"

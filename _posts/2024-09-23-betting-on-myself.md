@@ -1,8 +1,6 @@
 ---
-layout: post
 title: "I am a self-learner and builder"
 date: 2024-09-23
-categories: blog
 ---
 
 As I mentioned in

@@ -1,8 +1,6 @@
 ---
-layout: post
 title: Construct I/O
 date: 2024-10-18
-categories: blog
 ---
 
 ## prep work

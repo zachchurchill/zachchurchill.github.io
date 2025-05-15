@@ -1,8 +1,6 @@
 ---
-layout: "post"
 title:  "The Churchill Library built with RoR"
 date:   2024-08-02
-categories: blog
 ---
 
 <section class="text-sm">

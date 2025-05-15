@@ -1,8 +1,6 @@
 ---
-layout: post
 title:  "Welcome (back) to Jekyll!"
 date:   2023-11-11
-categories: blog
 ---
 
 After messing around with different websites and themes I landed on

@@ -1,8 +1,6 @@
 ---
-layout: "post"
 title:  "Fermentation log now available"
 date:   2023-12-03
-categories: blog
 ---
 
 There we go!

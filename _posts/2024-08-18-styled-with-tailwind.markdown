@@ -1,8 +1,6 @@
 ---
-layout: "post"
 title: "Styled with TailwindCSS"
 date: 2024-08-18
-categories: blog
 ---
 
 [Initially]({%- post_url 2023-11-11-obligatory-first-website-post -%}),
