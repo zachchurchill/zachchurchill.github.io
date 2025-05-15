@@ -3,13 +3,13 @@ layout: page
 title: books
 ---
 
-{%- include collection_stats.html collection_name="books" data_file="books.csv" -%}
+{%- include collection_stats.html collection_name="books" data_file="books.json" -%}
 
-{% assign unique_years = site.data.books | map: "year_read" | uniq | reverse %}
+{% assign unique_years = site.data.books | map: "yearRead" | uniq | reverse %}
 {% for year in unique_years %}
 <section class="pt-4">
 <h2 class="text-lg">{{ year }}</h2>
-{% assign filtered_books = site.data.books | where: "year_read", year %}
+{% assign filtered_books = site.data.books | where: "yearRead", year %}
 <p><strong>{{ filtered_books | size }}</strong> books read:</p>
 <ul id="books__{{ year }}" class="list-outside list-disc space-y-2">
 {% for book in filtered_books %}
