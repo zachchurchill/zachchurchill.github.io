@@ -3,7 +3,7 @@ layout: page
 title: meads
 ---
 
-{%- include collection_stats.html collection_name="meads" data_file="meads.csv" -%}
+{%- include collection_stats.html collection_name="meads" data_file="meads.json" -%}
 
 {%- assign meaderys = site.data.meads | map: "meadery" | uniq -%}
 {%- for meadery in meaderys -%}
@@ -15,7 +15,7 @@ title: meads
       <strong>{{ num_drinks }}</strong> mead{% if num_drinks >1 %}s{% endif %} enjoyed:
       <ul class="list-outside list-disc">
       {% for drink in drinks_by_maker %}
-        <li class="ms-4 mt-1">{{ drink | map: "mead" }} &mdash; <span class="font-light">{{ drink | map: "flavors__tasting_notes" }}</li>
+        <li class="ms-4 mt-1">{{ drink | map: "mead" }} &mdash; <span class="font-light">{{ drink | map: "tastingNotes" }}</li>
       {% endfor %}
       </ul>
     </p>
