@@ -4,7 +4,10 @@ module.exports = {
     './_includes/**/*.html',
     './_layouts/**/*.html',
     './_posts/*.md',
-    './*.html',
+    'index.html',
+    './books/*.html',
+    './meads/*.html',
+    './ferments/*.html',
   ],
   theme: {
     container: {
