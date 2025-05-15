@@ -24,9 +24,9 @@ layout: default
     <h2 class="text-xl">collections</h2>
     <ul class="list-inside list-disc space-y-1 md:space-y-1">
       <li><a href="https://library.{{ site.cname }}" class="text-foam-moon hover:text-foam-dawn">library</a></li>
-      <li><a href="{% link books.html %}" class="text-foam-moon hover:text-foam-dawn">books</a></li>
-      <li><a href="{% link meads.html %}" class="text-foam-moon hover:text-foam-dawn">meads</a></li>
-      <li><a href="{% link ferments.html %}" class="text-foam-moon hover:text-foam-dawn">ferments</a></li>
+      <li><a href="{% link books/index.html %}" class="text-foam-moon hover:text-foam-dawn">books</a></li>
+      <li><a href="{% link meads/index.html %}" class="text-foam-moon hover:text-foam-dawn">meads</a></li>
+      <li><a href="{% link ferments/index.html %}" class="text-foam-moon hover:text-foam-dawn">ferments</a></li>
     </ul>
   </section>
 
@@ -41,7 +41,7 @@ layout: default
     {% endfor %}
     </ul>
     <p class="mt-4">
-      <a href="{% link posts.html %}" class="text-foam-moon hover:text-foam-dawn">[more posts]</a>
+      <a href="{% link posts/index.html %}" class="text-foam-moon hover:text-foam-dawn">[more posts]</a>
     </p>
   </section>
 

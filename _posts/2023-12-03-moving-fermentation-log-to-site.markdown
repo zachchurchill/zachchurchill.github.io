@@ -7,7 +7,7 @@ categories: blog
 
 There we go!
 Visibility on all of the
-[ferments]({% link ferments.html %})
+[ferments]({% link ferments/index.html %})
 I've made is now available.
 
 Moving this data to my site has finally removed my reliance on Google products to store my collections.
@@ -20,7 +20,7 @@ Although I got a simple representation of the log up in my collections,
 I think there is more to be done.
 That is,
 this collection and some of the others like
-[books]({% link books.html %})
+[books]({% link books/index.html %})
 are ripe for summarization and fancy graphs.
 Not making any real promises,
 but I think it may be interesting to try out incorporating some D3.js graphics in the future.
