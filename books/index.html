@@ -3,7 +3,7 @@ layout: page
 title: books
 ---
 
-{%- include collection_stats.html collection_name="books" data_file="books.json" -%}
+{%- include collection_stats.html collection_name="books" data_file="books/books.json" -%}
 
 {% assign unique_years = site.data.books | map: "yearRead" | uniq | reverse %}
 {% for year in unique_years %}

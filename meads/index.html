@@ -3,7 +3,7 @@ layout: page
 title: meads
 ---
 
-{%- include collection_stats.html collection_name="meads" data_file="meads.json" -%}
+{%- include collection_stats.html collection_name="meads" data_file="meads/meads.json" -%}
 
 {%- assign meaderys = site.data.meads | map: "meadery" | uniq -%}
 {%- for meadery in meaderys -%}
