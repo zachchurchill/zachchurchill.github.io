@@ -1,8 +1,14 @@
 ---
 layout: default
 ---
-<nav class="mb-4">
-  <a href="{{ "/" | relative_url }}" class="font-mono text-lg text-foam-moon hover:text-foam-dawn font-bold underline underline-offset-8 cursor-pointer">..</a>
-</nav>
+<header>
+  <nav class="mb-4">
+    <a href="{{ "/" | relative_url }}" class="font-mono text-lg text-foam-moon hover:text-foam-dawn font-bold underline underline-offset-8 cursor-pointer">..</a>
+  </nav>
+</header>
+<main>
 {{ content }}
+</main>
+<footer>
 {%- include back_to_top_button.html -%}
+</footer>

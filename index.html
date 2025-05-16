@@ -5,12 +5,12 @@
 layout: default
 ---
 
-<section>
+<header>
   <h1 class="text-2xl lowercase">{{ site.author }}</h1>
   <p>{{ site.description }}</p>
-</section>
+</header>
 
-<div class="pr-12">
+<main class="pr-12">
   <section class="pt-4">
     <h2 class="text-xl">info</h2>
     <ul class="list-inside list-disc space-y-1 md:space-y-0.5">
@@ -44,8 +44,8 @@ layout: default
       <a href="{% link posts/index.html %}" class="text-foam-moon hover:text-foam-dawn">[more posts]</a>
     </p>
   </section>
+</main>
 
-  <footer class="text-sm mt-4 mb-8 md:mb-0">
-    <p>color palette provided by <a href="https://rosepinetheme.com/palette/" class="text-foam-moon hover:text-foam-dawn">rosé pine</a></p>
-  </footer>
-</div>
+<footer class="text-sm mt-4 mb-8 md:mb-0">
+  <p>color palette provided by <a href="https://rosepinetheme.com/palette/" class="text-foam-moon hover:text-foam-dawn">rosé pine</a></p>
+</footer>
