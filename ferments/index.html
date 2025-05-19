@@ -46,34 +46,32 @@ title: ferments
 {%- assign completed = site.data.ferments | where_exp: "item", "item.bottlingDate != nil" -%}
 <section class="my-2">
   <h2 class="text-xl">completed</h2>
-  <p>
-    <strong>{{ completed | size }}</strong> ferments completed and bottled:
-    <ul class="list-outside list-disc">
-      {% for ferment in completed %}
-      <li class="ms-4 my-1">
-        "{{ ferment.ferment }}" ({{ ferment.id }} - {{ ferment.type }})
-        <ul class="{{ details_ul_class }} list-outside list-[circle] hidden text-sm">
-          <li class="ms-4 mt-1">Started {{ ferment.primaryStartDate }}{% if ferment.startingSG != nil %} with SG ~ {{ ferment.startingSG }}{% endif %}</li>
-          <li class="ms-4 mt-1">Bottled {{ ferment.bottlingDate }}{% if ferment.finalSG != nil %} with final SG ~ {{ ferment.finalSG }}{% endif %}</li>
-          <li class="ms-4 mt-1">{{ ferment.gallon }} gallon batch using {{ ferment.yeast }}</li>
-          {% if ferment.oakStartDate != nil %}
-          <li class="ms-4 mt-1">
-            Oaked using {{ ferment.oakAmount }} of {{ ferment.oakFlavor }} {{ ferment.oakType}}
-            {% if ferment.oakEndDate != nil %}
-            from {{ ferment.oakStartDate }} to {{ ferment.oakEndDate }}
-            {% else %}
-            since {{ ferment.oakStartDate }}
-            {% endif %}
-            </li>
+  <p><strong>{{ completed | size }}</strong> ferments completed and bottled:</p>
+  <ul class="list-outside list-disc">
+    {% for ferment in completed %}
+    <li class="ms-4 my-1">
+      "{{ ferment.ferment }}" ({{ ferment.id }} - {{ ferment.type }})
+      <ul class="{{ details_ul_class }} list-outside list-[circle] hidden text-sm">
+        <li class="ms-4 mt-1">Started {{ ferment.primaryStartDate }}{% if ferment.startingSG != nil %} with SG ~ {{ ferment.startingSG }}{% endif %}</li>
+        <li class="ms-4 mt-1">Bottled {{ ferment.bottlingDate }}{% if ferment.finalSG != nil %} with final SG ~ {{ ferment.finalSG }}{% endif %}</li>
+        <li class="ms-4 mt-1">{{ ferment.gallon }} gallon batch using {{ ferment.yeast }}</li>
+        {% if ferment.oakStartDate != nil %}
+        <li class="ms-4 mt-1">
+          Oaked using {{ ferment.oakAmount }} of {{ ferment.oakFlavor }} {{ ferment.oakType}}
+          {% if ferment.oakEndDate != nil %}
+          from {{ ferment.oakStartDate }} to {{ ferment.oakEndDate }}
+          {% else %}
+          since {{ ferment.oakStartDate }}
           {% endif %}
-          {% if ferment.carbonationMethod != nil %}
-          <li class="ms-4 mt-1">Carbonated via {{ ferment.carbonationMethod }}</li>
-          {% endif %}
-        </ul>
-      </li>
-      {% endfor %}
-    </ul>
-  </p>
+          </li>
+        {% endif %}
+        {% if ferment.carbonationMethod != nil %}
+        <li class="ms-4 mt-1">Carbonated via {{ ferment.carbonationMethod }}</li>
+        {% endif %}
+      </ul>
+    </li>
+    {% endfor %}
+  </ul>
 </section>
 
 <script>
