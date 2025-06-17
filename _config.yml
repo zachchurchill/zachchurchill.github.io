@@ -9,12 +9,6 @@ cname: zachurchill.com
 
 theme:
 
-plugins:
-  - jekyll-postcss
-
-postcss:
-  cache: false
-
 collections:
   posts:
     permalink: /:collection/:year/:month/:title/
