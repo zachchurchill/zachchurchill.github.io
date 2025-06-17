@@ -3,14 +3,14 @@ title:  "The Churchill Library built with RoR"
 date:   2024-08-02
 ---
 
-<section class="text-sm">
+<section>
   <strong>tl;dr</strong>
   <dl>
-    <dt class="mt-2"><em>Project</em></dt>
+    <dt><em>Project</em></dt>
     <dd><strong>The Churchill Library</strong>, a Ruby on Rails app to catalogue family's books and provide interaction with via LLM</dd>
-    <dt class="mt-2"><em>Tech Stack</em></dt>
+    <dt><em>Tech Stack</em></dt>
     <dd>Ruby on Rails, Hotwire, TailwindCSS, TBD vector database, and TBD LLM API though interested in AWS Bedrock</dd>
-    <dt class="mt-2"><em>Goals</em></dt>
+    <dt><em>Goals</em></dt>
     <dd>Functional, publicly available app by September; full RAG integration with LLM chat by year-end</dd>
   </dl>
 </section>

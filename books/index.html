@@ -7,16 +7,16 @@ title: books
 
 {% assign unique_years = site.data.books | map: "yearRead" | uniq | reverse %}
 {% for year in unique_years %}
-<section class="pt-4">
-<h2 class="text-lg">{{ year }}</h2>
+<section>
+<h2>{{ year }}</h2>
 {% assign filtered_books = site.data.books | where: "yearRead", year %}
 <p><strong>{{ filtered_books | size }}</strong> books read:</p>
-<ul id="books__{{ year }}" class="list-outside list-disc space-y-2">
+<ul id="books__{{ year }}">
 {% for book in filtered_books %}
-  <li class="flex flex-row space-x-1">
-    <p class="flex-none mx-2">&bullet;</p>
-    <p class="basis-9/12">"{{ book.title }}" by {{ book.author }}</p>
-    <p class="basis-2/12 flex-none h-fit text-sm text-center text-subtle-moon border rounded md:rounded-md lg:rounded-lg border-subtle-moon">{{ book.type }}</p>
+  <li>
+    <p>&bullet;</p>
+    <p>"{{ book.title }}" by {{ book.author }}</p>
+    <p>{{ book.type }}</p>
   </li>
 {% endfor %}
 </ul>

@@ -9,13 +9,13 @@ title: meads
 {%- for meadery in meaderys -%}
   {% assign drinks_by_maker = site.data.meads | where: "meadery", meadery  %}
   {% assign num_drinks = drinks_by_maker | size %}
-  <section class="my-2">
-    <h2 class="text-xl">{{ meadery }}</h2>
+  <section>
+    <h2>{{ meadery }}</h2>
     <p>
       <strong>{{ num_drinks }}</strong> mead{% if num_drinks >1 %}s{% endif %} enjoyed:
-      <ul class="list-outside list-disc">
+      <ul>
       {% for drink in drinks_by_maker %}
-        <li class="ms-4 mt-1">{{ drink | map: "mead" }} &mdash; <span class="font-light">{{ drink | map: "tastingNotes" }}</li>
+        <li>{{ drink | map: "mead" }} &mdash; <span>{{ drink | map: "tastingNotes" }}</li>
       {% endfor %}
       </ul>
     </p>
