@@ -9,9 +9,7 @@
   {%- endif -%}
 {%- endfor -%}
 
-<section>
+<section id="collection-stats" class="flex flex-to-row">
   <p>There have been <strong>{{ collection_size }}</strong> {{ collection_name }} logged overall.</p>
-  <div>
-    <button id={{ button_id }} type="button" onclick="window.open('{{ data_file | relative_url }}')">Download {{ collection_name }}</button>
-  </div>
+  <button id="collection-download" class="button" type="button" onclick="window.open('{{ data_file | relative_url }}')">Download {{ collection_name }}</button>
 </section>

@@ -15,9 +15,9 @@ title: ferments
   <p>nothin' in the pot right now.</p>
   {% endif %}
   {% for ferment in in_progress %}
-  <details>
-    <summary>"{{ ferment.ferment }}" ({{ ferment.id }} - {{ ferment.type }})</summary>
-    <ul>
+  <details class="ferment">
+    <summary><span class="ferment-name">"{{ ferment.ferment }}"</span> <span class="ferment-id">({{ ferment.id }} - {{ ferment.type }})</span></summary>
+    <ul class="ferment-details">
       <li>Started {{ ferment.primaryStartDate }}{% if ferment.startingSG != nil %} with SG ~ {{ ferment.startingSG }}{% endif %}</li>
       <li>{{ ferment.gallon }} gallon batch using {{ ferment.yeast }}</li>
       {% if ferment.oakStartDate != nil %}
@@ -38,9 +38,9 @@ title: ferments
   <h2>completed</h2>
   <p><strong>{{ completed | size }}</strong> ferments completed and bottled:</p>
   {% for ferment in completed %}
-  <details>
-    <summary>"{{ ferment.ferment }}" ({{ ferment.id }} - {{ ferment.type }})</summary>
-    <ul>
+  <details class="ferment">
+    <summary><span class="ferment-name">"{{ ferment.ferment }}"</span> <span class="ferment-id">({{ ferment.id }} - {{ ferment.type }})</span></summary>
+    <ul class="ferment-details">
       <li>Started {{ ferment.primaryStartDate }}{% if ferment.startingSG != nil %} with SG ~ {{ ferment.startingSG }}{% endif %}</li>
       <li>Bottled {{ ferment.bottlingDate }}{% if ferment.finalSG != nil %} with final SG ~ {{ ferment.finalSG }}{% endif %}</li>
       <li>{{ ferment.gallon }} gallon batch using {{ ferment.yeast }}</li>

@@ -15,7 +15,7 @@ title: meads
       <strong>{{ num_drinks }}</strong> mead{% if num_drinks >1 %}s{% endif %} enjoyed:
       <ul>
       {% for drink in drinks_by_maker %}
-        <li>{{ drink | map: "mead" }} &mdash; <span>{{ drink | map: "tastingNotes" }}</li>
+        <li><span class="mead-name">{{ drink | map: "mead" }}</span><span class="mead-description"> &mdash; {{ drink | map: "tastingNotes" }}</span></li>
       {% endfor %}
       </ul>
     </p>
