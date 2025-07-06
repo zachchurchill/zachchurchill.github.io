@@ -279,6 +279,27 @@
   .ferment-id {
     color: var(--text-secondary);
   }
+
+  #post-page-header > nav > a {
+    padding-inline-start: unset;
+  }
+
+  #post-header {
+    margin-block-start: 0.5em;
+    display: flex;
+    align-items: self-end;
+    justify-content: space-between;
+  }
+
+  #post-published-date {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    word-break: keep-all;
+  }
+
+  #post-content {
+    margin-block-start: 1em;
+  }
 }
 
 @layer utilities {
