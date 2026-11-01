@@ -9,6 +9,11 @@ cname: zachurchill.com
 
 theme:
 
+# Retain post sources and the archive page in Git, but do not publish them.
+exclude:
+  - _posts
+  - posts
+
 collections:
   posts:
     permalink: /:collection/:year/:month/:title/

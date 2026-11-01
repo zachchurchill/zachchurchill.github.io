@@ -29,21 +29,6 @@ layout: default
       <li><a href="{% link ferments/index.html %}">ferments</a></li>
     </ul>
   </section>
-
-  <section>
-    <h2>posts</h2>
-    <ul id="posts">
-    {% for post in site.posts limit:5 %}
-      <li>
-        <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
-        <a href="{{ post.url }}">{{ post.title }}</a>
-      </li>
-    {% endfor %}
-    </ul>
-    <p>
-      <a href="{% link posts/index.html %}">[more posts]</a>
-    </p>
-  </section>
 </main>
 
 <footer>
