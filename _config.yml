@@ -13,6 +13,14 @@ theme:
 exclude:
   - _posts
   - posts
+  # Preserve Jekyll's default exclusions when overriding this list.
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
 
 collections:
   posts:
